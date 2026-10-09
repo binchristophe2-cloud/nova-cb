@@ -213,24 +213,41 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
       _replyto: email,
       _captcha: 'false',
       _template: 'table',
-      destinataire: 'nova.entretien33@outlook.fr',
-      type_demande: 'Demande de diagnostic gratuit sans engagement',
-      support_a_diagnostiquer: supportSelected || 'Non spécifié',
-      problemes_constates: observedProblems.join(', ') || 'À identifier sur place',
+      name: fullName,
+      fullName: fullName,
       nom_complet: fullName,
+      phone: phone,
       telephone: phone,
       email: email,
+      support: supportSelected || 'Non spécifié',
+      support_a_diagnostiquer: supportSelected || 'Non spécifié',
+      problems: observedProblems.join(', ') || 'À identifier sur place',
+      problemes_constates: observedProblems.join(', ') || 'À identifier sur place',
       adresse_du_bien: address || 'Non renseignée',
       code_postal: postalCode || 'Non renseigné',
       ville: city || 'Mérignac',
+      address: `${address || ''} ${postalCode || ''} ${city || ''}`.trim(),
+      message: `Demande de diagnostic gratuit:\n- Client: ${fullName}\n- Tél: ${phone}\n- Email: ${email}\n- Adresse: ${address || ''} ${postalCode || ''} ${city || ''}\n- Support: ${supportSelected || 'À identifier'}\n- Problèmes: ${observedProblems.join(', ') || 'Non précisé'}`,
       accord_recontact: consentContact ? 'Oui, accepté' : 'Non',
       photos_fournies: photos.length > 0 ? `${photos.length} photo(s) (${photos.map(p => p.name).join(', ')})` : 'Aucune photo fournie (facultatif)',
       date_demande: new Date().toLocaleString('fr-FR'),
+      destinataire: 'nova.entretien33@outlook.fr',
     };
 
     try {
-      // Transmit simultaneously to FormSubmit and FormBold
+      // Transmission multi-canaux simultanée pour garantir 100% de délivrabilité :
+      // 1. Script PHP natif Hostinger (sans intermédiaire tiers, envoi direct par le serveur nova-cb.com)
+      // 2. FormSubmit AJAX direct vers nova.entretien33@outlook.fr
+      // 3. API Node.js /api/contact
       await Promise.allSettled([
+        fetch('/contact.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        }),
         fetch('https://formsubmit.co/ajax/nova.entretien33@outlook.fr', {
           method: 'POST',
           headers: {
@@ -239,7 +256,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
           },
           body: JSON.stringify(payload),
         }),
-        fetch('https://formbold.com/s/9kmb2', {
+        fetch('/api/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

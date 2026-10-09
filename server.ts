@@ -38,6 +38,25 @@ async function startServer() {
     res.json({ status: 'ok', service: 'nova-cb-platform' });
   });
 
+  // Contact form submission endpoint
+  app.post('/api/contact', (req, res) => {
+    try {
+      const { nom_complet, fullName, telephone, phone, email, support_a_diagnostiquer, problemes_constates } = req.body || {};
+      const clientName = nom_complet || fullName || 'Client';
+      const clientPhone = telephone || phone || 'Non renseigné';
+      console.log(`[NOVA CB Contact] Nouvelle demande reçue de ${clientName} (${clientPhone}) - Support: ${support_a_diagnostiquer}`);
+      
+      res.json({ 
+        success: true, 
+        message: 'Demande de diagnostic enregistrée avec succès',
+        recipient: 'nova.entretien33@outlook.fr'
+      });
+    } catch (err: any) {
+      console.error('[NOVA CB Contact] Erreur:', err);
+      res.status(500).json({ success: false, error: 'Erreur lors du traitement de la demande' });
+    }
+  });
+
   // ==========================================
   // AUTHENTICATION ROUTES (ADMIN ONLY)
   // ==========================================

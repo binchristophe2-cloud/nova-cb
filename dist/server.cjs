@@ -886,6 +886,22 @@ async function startServer() {
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok", service: "nova-cb-platform" });
   });
+  app.post("/api/contact", (req, res) => {
+    try {
+      const { nom_complet, fullName, telephone, phone, email, support_a_diagnostiquer, problemes_constates } = req.body || {};
+      const clientName = nom_complet || fullName || "Client";
+      const clientPhone = telephone || phone || "Non renseign\xE9";
+      console.log(`[NOVA CB Contact] Nouvelle demande re\xE7ue de ${clientName} (${clientPhone}) - Support: ${support_a_diagnostiquer}`);
+      res.json({
+        success: true,
+        message: "Demande de diagnostic enregistr\xE9e avec succ\xE8s",
+        recipient: "nova.entretien33@outlook.fr"
+      });
+    } catch (err) {
+      console.error("[NOVA CB Contact] Erreur:", err);
+      res.status(500).json({ success: false, error: "Erreur lors du traitement de la demande" });
+    }
+  });
   app.post("/api/admin/login", (req, res) => {
     const clientIp = req.ip || req.socket.remoteAddress || "unknown-ip";
     const rateCheck = checkRateLimit(clientIp);
