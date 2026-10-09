@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Forcer HTTPS sécurisé
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Ne pas réécrire si déjà dans dist/
+  RewriteCond %{REQUEST_URI} ^/dist/
+  RewriteRule ^ - [L]
+
+  # Servir les fichiers/dossiers existants dans dist/
+  RewriteCond %{DOCUMENT_ROOT}/dist/$1 -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}/dist/$1 -d
+  RewriteRule ^(.*)$ dist/$1 [L]
+
+  # Si le fichier existe directement à la racine
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # Redirection SPA (Single Page Application) vers dist/index.html
+  RewriteRule ^.*$ dist/index.html [L]
+</IfModule>
