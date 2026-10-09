@@ -90,21 +90,21 @@ export const SiloShowcaseSection: React.FC<SiloShowcaseSectionProps> = ({
   ];
 
   return (
-    <section id="prestations-silos" className="py-14 sm:py-20 bg-[#0b1329] border-t border-sky-950/80 scroll-mt-20">
+    <section id="prestations-silos" className="py-14 sm:py-20 bg-[#F5F2EB] border-t border-stone-200/80 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3 border border-emerald-200">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>Architecture Technique Spécialisée</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight">
             Nos pôles de compétences extérieurs
           </h2>
 
-          <p className="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+          <p className="mt-4 text-stone-600 text-base sm:text-lg leading-relaxed">
             Chaque matériau requiert un protocole rigoureux. Découvrez nos pages dédiées par support pour comprendre notre méthode et obtenir une estimation précise.
           </p>
         </div>
@@ -116,35 +116,35 @@ export const SiloShowcaseSection: React.FC<SiloShowcaseSectionProps> = ({
             return (
               <div
                 key={item.slug}
-                className="rounded-3xl bg-[#0e1935] border border-sky-900/50 hover:border-sky-500/50 p-6 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+                className="rounded-3xl bg-white border border-stone-200 hover:border-emerald-500/60 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <div className="w-11 h-11 rounded-2xl bg-sky-500/15 text-sky-400 flex items-center justify-center group-hover:scale-105 transition-transform border border-sky-500/20">
+                    <div className="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover:scale-105 transition-transform border border-emerald-200">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-sky-950/60 text-sky-300 border border-sky-800/60">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-100/70 text-emerald-800 border border-emerald-200">
                       {item.highlight}
                     </span>
                   </div>
 
-                  <div className="text-[11px] font-bold text-sky-400 uppercase tracking-wide mb-1">
+                  <div className="text-[11px] font-bold text-emerald-700 uppercase tracking-wide mb-1">
                     {item.tag}
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-white mb-2 leading-snug group-hover:text-sky-300 transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold text-stone-900 mb-2 leading-snug group-hover:text-emerald-700 transition-colors">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  <p className="text-xs text-stone-600 leading-relaxed mb-4">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-sky-900/40 flex items-center justify-between gap-2">
+                <div className="pt-4 border-t border-stone-100 flex items-center justify-between gap-2">
                   <button
                     onClick={() => onNavigateToSilo(item.slug)}
-                    className="text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1 group-hover:gap-1.5 transition-all cursor-pointer"
+                    className="text-xs font-bold text-emerald-700 hover:text-emerald-600 flex items-center gap-1 group-hover:gap-1.5 transition-all cursor-pointer"
                   >
                     <span>Voir la méthode</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -152,7 +152,7 @@ export const SiloShowcaseSection: React.FC<SiloShowcaseSectionProps> = ({
 
                   <button
                     onClick={() => onOpenQuote(item.title)}
-                    className="px-3 py-1.5 rounded-xl bg-slate-900 border border-sky-900/50 hover:bg-sky-500 hover:text-white text-[11px] font-bold text-sky-200 transition-all cursor-pointer"
+                    className="px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200 hover:bg-emerald-600 hover:text-white text-[11px] font-bold text-emerald-800 transition-all cursor-pointer"
                   >
                     Devis
                   </button>
@@ -163,18 +163,18 @@ export const SiloShowcaseSection: React.FC<SiloShowcaseSectionProps> = ({
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-12 p-6 rounded-3xl bg-slate-950/60 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-12 p-6 rounded-3xl bg-white border border-stone-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
-            <div className="text-white font-bold text-sm sm:text-base">
+            <div className="text-stone-900 font-bold text-sm sm:text-base">
               Vous avez un projet spécifique ou plusieurs surfaces à traiter en même temps ?
             </div>
-            <div className="text-xs text-slate-400 mt-0.5">
+            <div className="text-xs text-stone-500 mt-0.5">
               Profitez d’une tarification globale dégressive pour l’ensemble de vos extérieurs.
             </div>
           </div>
           <button
             onClick={() => onOpenQuote('Devis Global')}
-            className="px-6 py-3 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-extrabold text-xs sm:text-sm shadow-md transition-all whitespace-nowrap cursor-pointer"
+            className="px-6 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm shadow-md transition-all whitespace-nowrap cursor-pointer"
           >
             Faire estimer mon chantier
           </button>

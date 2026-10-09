@@ -55,7 +55,7 @@ export const ProductsSolutionsPage: React.FC<ProductsSolutionsPageProps> = ({
   ];
 
   return (
-    <article className="min-h-screen bg-slate-950 text-slate-100">
+    <article className="min-h-screen bg-[#FAF8F5] text-stone-900">
       <SeoHead
         title="Nos Solutions de Nettoyage Éco-responsables | NOVA CB"
         description="Découvrez les solutions de nettoyage extérieur privilégiées par NOVA CB : formules à base d'ingrédients d'origine naturelle et références certifiées ECOCERT selon le support."
@@ -64,13 +64,13 @@ export const ProductsSolutionsPage: React.FC<ProductsSolutionsPageProps> = ({
       />
 
       {/* Breadcrumb Bar */}
-      <nav aria-label="Fil d'Ariane" className="bg-slate-900/80 border-b border-slate-800 text-xs py-3 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex items-center space-x-2 text-slate-400">
+      <nav aria-label="Fil d'Ariane" className="bg-stone-100 border-b border-stone-200 text-xs py-3 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center space-x-2 text-stone-500">
           <button 
             onClick={onNavigateHome}
             className="flex items-center hover:text-white transition-colors cursor-pointer"
           >
-            <Home className="w-3.5 h-3.5 mr-1 text-sky-400" />
+            <Home className="w-3.5 h-3.5 mr-1 text-emerald-600" />
             <span>Accueil</span>
           </button>
           <ChevronRight className="w-3 h-3 text-slate-600" />
@@ -99,7 +99,7 @@ export const ProductsSolutionsPage: React.FC<ProductsSolutionsPageProps> = ({
             <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
             <div className="space-y-1">
               <strong className="text-white">Engagement de clarté technique :</strong>
-              <p className="text-slate-400 leading-relaxed">
+              <p className="text-stone-500 leading-relaxed">
                 Notre objectif est d’associer efficacité du traitement, respect du support et réduction de l’impact environnemental lorsque les conditions du chantier le permettent. Les produits sont sélectionnés en fonction de la compatibilité du support et de ses caractéristiques techniques. La mention ECOCERT s’applique uniquement aux références formellement certifiées.
               </p>
             </div>
@@ -120,7 +120,7 @@ export const ProductsSolutionsPage: React.FC<ProductsSolutionsPageProps> = ({
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                   selectedCategory === cat
                     ? 'bg-emerald-500 text-slate-950 font-extrabold shadow-sm shadow-emerald-500/20'
-                    : 'bg-slate-950 text-slate-400 hover:text-white border border-slate-800'
+                    : 'bg-slate-950 text-stone-500 hover:text-white border border-slate-800'
                 }`}
               >
                 {cat === 'all' ? 'Tous les produits' : cat}
@@ -162,7 +162,7 @@ export const ProductsSolutionsPage: React.FC<ProductsSolutionsPageProps> = ({
               <div className="space-y-4">
                 {/* Header row with badges */}
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">
+                  <span className="text-xs font-bold uppercase text-stone-500 tracking-wider">
                     {prod.category} • Solution Éco-responsable
                   </span>
 
@@ -174,8 +174,8 @@ export const ProductsSolutionsPage: React.FC<ProductsSolutionsPageProps> = ({
                       </span>
                     )}
                     {prod.isNaturalOrigin && (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/40 text-[10px] font-bold">
-                        <Leaf className="w-3.5 h-3.5 text-sky-400" />
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 border border-sky-500/40 text-[10px] font-bold">
+                        <Leaf className="w-3.5 h-3.5 text-emerald-600" />
                         Origine Naturelle
                       </span>
                     )}
@@ -200,27 +200,27 @@ export const ProductsSolutionsPage: React.FC<ProductsSolutionsPageProps> = ({
                 {/* Technical data table */}
                 <div className="rounded-2xl bg-slate-950/70 border border-slate-800/80 p-4 space-y-2 text-xs">
                   <div className="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-slate-800/60">
-                    <span className="text-slate-400 font-medium">Supports compatibles :</span>
+                    <span className="text-stone-500 font-medium">Supports compatibles :</span>
                     <span className="text-slate-200 font-semibold sm:text-right">{prod.supports.join(', ')}</span>
                   </div>
                   <div className="flex justify-between py-1 border-b border-slate-800/60">
-                    <span className="text-slate-400 font-medium">Dilution :</span>
+                    <span className="text-stone-500 font-medium">Dilution :</span>
                     <span className="text-slate-200 font-semibold">{prod.dilution}</span>
                   </div>
                   <div className="flex justify-between py-1 border-b border-slate-800/60">
-                    <span className="text-slate-400 font-medium">Rendement indicatif :</span>
+                    <span className="text-stone-500 font-medium">Rendement indicatif :</span>
                     <span className="text-emerald-400 font-bold">{prod.yieldM2}</span>
                   </div>
                   <div className="flex justify-between py-1 border-b border-slate-800/60">
-                    <span className="text-slate-400 font-medium">Mode d'application :</span>
+                    <span className="text-stone-500 font-medium">Mode d'application :</span>
                     <span className="text-slate-200 font-semibold">{prod.applicationMethod}</span>
                   </div>
                   <div className="flex justify-between py-1 border-b border-slate-800/60">
-                    <span className="text-slate-400 font-medium">Temps d'action :</span>
-                    <span className="text-sky-300 font-semibold">{prod.actionTime}</span>
+                    <span className="text-stone-500 font-medium">Temps d'action :</span>
+                    <span className="text-emerald-700 font-semibold">{prod.actionTime}</span>
                   </div>
                   <div className="py-1">
-                    <span className="text-slate-400 font-medium block mb-1">Précautions & Sécurité :</span>
+                    <span className="text-stone-500 font-medium block mb-1">Précautions & Sécurité :</span>
                     <span className="text-slate-300 text-[11px] leading-relaxed block">{prod.precautions}</span>
                   </div>
                 </div>
@@ -253,14 +253,14 @@ export const ProductsSolutionsPage: React.FC<ProductsSolutionsPageProps> = ({
         {/* 7-Step Method Banner */}
         <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-600 text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Une méthode adaptée à chaque support</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-white">
               Nova Entretien ne choisit pas uniquement un produit, mais une méthode complète
             </h3>
-            <p className="text-xs sm:text-sm text-slate-400">
+            <p className="text-xs sm:text-sm text-stone-500">
               L'efficacité du résultat repose sur le respect rigoureux de chaque étape technique du protocole d'intervention.
             </p>
           </div>
@@ -279,7 +279,7 @@ export const ProductsSolutionsPage: React.FC<ProductsSolutionsPageProps> = ({
                   {st.step}
                 </div>
                 <div className="text-xs font-bold text-white">{st.title}</div>
-                <div className="text-[11px] text-slate-400 leading-tight">{st.desc}</div>
+                <div className="text-[11px] text-stone-500 leading-tight">{st.desc}</div>
               </div>
             ))}
           </div>

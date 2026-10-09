@@ -108,12 +108,12 @@ export const HomePage: React.FC<HomePageProps> = ({
       </div>
 
       {/* Final Conversion Strip */}
-      <section className="py-12 bg-gradient-to-r from-sky-600 via-blue-600 to-sky-700 text-white text-center border-y border-sky-400/40 shadow-2xl">
+      <section className="py-12 bg-gradient-to-r from-emerald-700 via-emerald-800 to-teal-900 text-white text-center border-y border-emerald-600/40 shadow-2xl">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight">
             Votre terrasse ou vos extérieurs ont besoin d'un nettoyage ?
           </h2>
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-emerald-100 max-w-2xl mx-auto">
             Évaluez gratuitement l'état de votre toiture, façade, muret ou terrasse, sans engagement.
           </p>
           <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -122,16 +122,16 @@ export const HomePage: React.FC<HomePageProps> = ({
                 onOpenQuote();
                 scrollToSection('contact');
               }}
-              className="px-8 py-4 rounded-2xl bg-slate-950 hover:bg-[#070c18] text-white font-extrabold text-sm sm:text-base shadow-2xl transition-all transform hover:-translate-y-0.5 cursor-pointer flex items-center gap-2 border border-sky-400/30"
+              className="px-8 py-4 rounded-2xl bg-[#071912] hover:bg-[#0b261b] text-white font-extrabold text-sm sm:text-base shadow-2xl transition-all transform hover:-translate-y-0.5 cursor-pointer flex items-center gap-2 border border-emerald-400/40"
             >
               <span>Demander mon diagnostic gratuit</span>
-              <ArrowRight className="w-4 h-4 text-sky-400" />
+              <ArrowRight className="w-4 h-4 text-emerald-400" />
             </button>
             <a
               href="tel:0624685217"
-              className="px-6 py-4 rounded-2xl bg-sky-950/70 hover:bg-sky-900 text-white font-bold text-sm flex items-center gap-2 transition-all border border-sky-300/40"
+              className="px-6 py-4 rounded-2xl bg-[#092218]/80 hover:bg-[#0d2e21] text-white font-bold text-sm flex items-center gap-2 transition-all border border-emerald-400/40"
             >
-              <Phone className="w-4 h-4 text-sky-400" />
+              <Phone className="w-4 h-4 text-emerald-400" />
               <span>06 24 68 52 17</span>
             </a>
           </div>
@@ -142,50 +142,50 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section 
         id="contact" 
         ref={contactSectionRef} 
-        className="py-16 sm:py-24 bg-[#080d1a] text-white relative overflow-hidden scroll-mt-20 border-t border-sky-950/80"
+        className="py-16 sm:py-24 bg-[#071912] text-white relative overflow-hidden scroll-mt-20 border-t border-emerald-950/80"
       >
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Column: Coordinates & Assurance */}
             <div className="lg:col-span-5 space-y-8">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/15 text-sky-300 text-xs font-bold uppercase tracking-wider mb-4 border border-sky-400/30">
-                  <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-400/30">
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Diagnostic gratuit & sans engagement</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-                  Demander mon <span className="text-sky-400">diagnostic gratuit</span>
+                  Demander mon <span className="text-emerald-400">diagnostic gratuit</span>
                 </h2>
 
-                <p className="mt-4 text-slate-200 text-base sm:text-lg font-medium leading-relaxed">
+                <p className="mt-4 text-emerald-100/90 text-base sm:text-lg font-medium leading-relaxed">
                   Évaluez gratuitement l'état de votre toiture, façade, muret ou terrasse, sans engagement.
                 </p>
 
-                <p className="mt-2 text-slate-300 text-sm leading-relaxed">
+                <p className="mt-2 text-emerald-200/70 text-sm leading-relaxed">
                   Un premier échange nous permet d'identifier vos besoins, l'état du support et la solution la plus adaptée.
                 </p>
               </div>
 
               {/* Coordinates List */}
-              <div className="space-y-4 pt-4 border-t border-sky-900/40">
+              <div className="space-y-4 pt-4 border-t border-emerald-900/60">
                 <a
                   href="tel:0624685217"
-                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-[#0e1935] hover:bg-[#122044] border-2 border-sky-500/60 hover:border-sky-400 shadow-lg shadow-sky-500/10 transition-all group cursor-pointer"
+                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-[#091F17] hover:bg-[#0d2a1f] border-2 border-emerald-500/60 hover:border-emerald-400 shadow-lg shadow-emerald-600/10 transition-all group cursor-pointer"
                   title="Appeler directement NOVA CB"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-sky-500 text-white flex items-center justify-center shrink-0 shadow-md shadow-sky-500/30 group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-emerald-600/30 group-hover:scale-105 transition-transform">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5">
+                    <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
                       <span>Ligne directe 7j/7</span>
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                     </div>
-                    <div className="text-xl sm:text-2xl font-black text-white group-hover:text-sky-300 tracking-wider mt-0.5">
+                    <div className="text-xl sm:text-2xl font-black text-white group-hover:text-emerald-300 tracking-wider mt-0.5">
                       06 24 68 52 17
                     </div>
                   </div>
@@ -193,43 +193,43 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                 <a
                   href="mailto:nova.entretien33@outlook.fr"
-                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-[#0e1935] hover:bg-[#122044] border-2 border-sky-900/60 hover:border-sky-400 shadow-md transition-all group cursor-pointer"
+                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-[#091F17] hover:bg-[#0d2a1f] border-2 border-emerald-900/60 hover:border-emerald-400 shadow-md transition-all group cursor-pointer"
                   title="Envoyer un email à NOVA CB"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-sky-900/60 text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-[#061811] border border-emerald-900/60 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="overflow-hidden">
                     <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">
                       Email professionnel
                     </div>
-                    <div className="text-sm sm:text-lg font-black text-sky-400 group-hover:text-sky-300 transition-colors truncate mt-0.5">
+                    <div className="text-sm sm:text-lg font-black text-emerald-400 group-hover:text-emerald-300 transition-colors truncate mt-0.5">
                       nova.entretien33@outlook.fr
                     </div>
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#0e1935]/80 border border-sky-900/40">
-                  <div className="w-11 h-11 rounded-xl bg-slate-900 border border-sky-900/50 text-sky-400 flex items-center justify-center shrink-0">
+                <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#091F17]/80 border border-emerald-900/40">
+                  <div className="w-11 h-11 rounded-xl bg-[#061811] border border-emerald-900/50 text-emerald-400 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Siège social</div>
+                    <div className="text-xs text-slate-300 font-medium">Siège social</div>
                     <div className="text-sm font-semibold text-white">
                       33 avenue Léon Blum, 33700 Mérignac, France
                     </div>
-                    <div className="text-xs text-sky-400 mt-0.5">
+                    <div className="text-xs text-emerald-400 mt-0.5">
                       Intervention Mérignac & Gironde (rayon 40km)
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#0e1935]/80 border border-sky-900/40">
-                  <div className="w-11 h-11 rounded-xl bg-slate-900 border border-sky-900/50 text-sky-400 flex items-center justify-center shrink-0">
+                <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#091F17]/80 border border-emerald-900/40">
+                  <div className="w-11 h-11 rounded-xl bg-[#061811] border border-emerald-900/50 text-emerald-400 flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Horaires d'intervention</div>
+                    <div className="text-xs text-slate-300 font-medium">Horaires d'intervention</div>
                     <div className="text-sm font-semibold text-white">
                       Lundi au Samedi : 8h00 - 19h00
                     </div>

@@ -35,21 +35,21 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuote })
   ];
 
   return (
-    <div className="py-10 sm:py-16 bg-[#0b1329] text-white min-h-screen">
+    <div className="py-10 sm:py-16 bg-[#FAF8F5] text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
         {/* Header Hero Banner */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-600/15 border border-sky-400/30 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>À propos de NOVA CB</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-            L’art de rénover et protéger <span className="text-sky-400">vos extérieurs</span>
+            L’art de rénover et protéger <span className="text-emerald-600">vos extérieurs</span>
           </h1>
 
           <p className="mt-5 text-slate-300 text-base sm:text-lg leading-relaxed">
-            Implantée à <strong>Mérignac</strong>, <strong className="text-sky-400 font-extrabold">NOVA CB</strong> est une entreprise spécialisée dans le nettoyage haute performance, la rénovation esthétique et l’entretien des surfaces extérieures, auprès des particuliers et des professionnels.
+            Implantée à <strong>Mérignac</strong>, <strong className="text-emerald-600 font-extrabold">NOVA CB</strong> est une entreprise spécialisée dans le nettoyage haute performance, la rénovation esthétique et l’entretien des surfaces extérieures, auprès des particuliers et des professionnels.
           </p>
         </div>
 
@@ -65,11 +65,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuote })
             </p>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Chez <strong className="text-sky-400 font-extrabold">NOVA CB</strong>, nous avons fait le choix d’une méthode responsable et experte : chaque chantier débute par l’analyse du support. Nous appliquons un <strong className="text-white">nettoyage à basse pression douce</strong> pour les toitures et façades afin de préserver l'étanchéité des tuiles et l'intégrité des enduits, et une <strong className="text-white">cloche de surface rotative sans projection</strong> pour décrasser vos terrasses en profondeur et de manière parfaitement homogène.
+              Chez <strong className="text-emerald-600 font-extrabold">NOVA CB</strong>, nous avons fait le choix d’une méthode responsable et experte : chaque chantier débute par l’analyse du support. Nous appliquons un <strong className="text-white">nettoyage à basse pression douce</strong> pour les toitures et façades afin de préserver l'étanchéité des tuiles et l'intégrité des enduits, et une <strong className="text-white">cloche de surface rotative sans projection</strong> pour décrasser vos terrasses en profondeur et de manière parfaitement homogène.
             </p>
 
             <div className="p-4 rounded-2xl bg-sky-950/40 border border-sky-500/30 text-sky-200 text-xs sm:text-sm font-medium flex items-center gap-3">
-              <ShieldCheck className="w-6 h-6 text-sky-400 shrink-0" />
+              <ShieldCheck className="w-6 h-6 text-emerald-600 shrink-0" />
               <span>Notre mission : remettre en état toitures, terrasses et façades, tout en prolongeant la durée de vie de votre patrimoine extérieur.</span>
             </div>
           </div>
@@ -84,7 +84,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuote })
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <div className="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">
+                <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">
                   Mérignac & Région Bordelaise
                 </div>
                 <div className="text-lg font-bold">
@@ -113,7 +113,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuote })
                 className="bg-[#0e1935] p-6 sm:p-7 rounded-3xl border border-sky-900/50 hover:border-sky-500/50 shadow-xl transition-all relative flex flex-col justify-between group"
               >
                 <div>
-                  <div className="text-3xl font-black text-sky-400 mb-4">
+                  <div className="text-3xl font-black text-emerald-600 mb-4">
                     {step.num}
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">
@@ -133,7 +133,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuote })
         <div className="bg-[#0e1935] text-white rounded-3xl p-8 sm:p-12 border border-sky-900/50 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-sky-400 text-xs font-bold">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-emerald-600 text-xs font-bold">
                 <MapPin className="w-3.5 h-3.5" />
                 <span>33 avenue Léon Blum, 33700 Mérignac</span>
               </div>
@@ -148,7 +148,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuote })
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
               <button
                 onClick={onOpenQuote}
-                className="bg-sky-500 hover:bg-sky-400 text-white font-bold py-3.5 px-6 rounded-full shadow-lg shadow-sky-500/30 text-center text-sm transition-all cursor-pointer flex items-center justify-center gap-2"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-full shadow-lg shadow-sky-500/30 text-center text-sm transition-all cursor-pointer flex items-center justify-center gap-2"
               >
                 <span>Demander un diagnostic gratuit</span>
                 <ArrowRight className="w-4 h-4" />
@@ -158,7 +158,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuote })
                 href="tel:0624685217"
                 className="bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3.5 px-6 rounded-full border border-slate-700 text-center text-sm transition-colors flex items-center justify-center gap-2"
               >
-                <Phone className="w-4 h-4 text-sky-400" />
+                <Phone className="w-4 h-4 text-emerald-600" />
                 <span>06 24 68 52 17</span>
               </a>
             </div>

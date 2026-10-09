@@ -49,7 +49,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
   ];
 
   return (
-    <article className="min-h-screen bg-slate-950 text-slate-100">
+    <article className="min-h-screen bg-[#FAF8F5] text-stone-900">
       <SeoHead
         title={silo.title}
         description={silo.metaDescription}
@@ -63,13 +63,13 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       />
 
       {/* Breadcrumb Bar */}
-      <nav aria-label="Fil d'Ariane" className="bg-slate-900/80 border-b border-slate-800 text-xs py-3 px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Fil d'Ariane" className="bg-stone-100 border-b border-stone-200 text-xs py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center space-x-2 text-slate-400">
           <button 
             onClick={onNavigateHome}
             className="flex items-center hover:text-white transition-colors cursor-pointer"
           >
-            <Home className="w-3.5 h-3.5 mr-1 text-sky-400" />
+            <Home className="w-3.5 h-3.5 mr-1 text-emerald-400" />
             <span>Accueil</span>
           </button>
           <ChevronRight className="w-3 h-3 text-slate-600" />
@@ -80,20 +80,20 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
             Prestations
           </button>
           <ChevronRight className="w-3 h-3 text-slate-600" />
-          <span className="text-sky-400 font-semibold truncate">{silo.shortTitle}</span>
+          <span className="text-emerald-400 font-semibold truncate">{silo.shortTitle}</span>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-12 lg:py-16 overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-slate-900/90 to-slate-950">
+      <section className="relative py-12 lg:py-16 overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-[#071912] to-[#0a261c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-bold tracking-wide uppercase">
-                <Sparkles className="w-3.5 h-3.5 text-sky-400" />
-                <span><strong className="text-white font-black bg-sky-500/20 px-1.5 py-0.5 rounded border border-sky-400/30">NOVA CB</strong> • Spécialiste {silo.category}</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold tracking-wide uppercase">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                <span><strong className="text-white font-black bg-emerald-500/20 px-1.5 py-0.5 rounded border border-emerald-400/30">NOVA CB</strong> • Spécialiste {silo.category}</span>
               </div>
 
               {/* H1 Tag */}
@@ -109,19 +109,19 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
               {/* Trust Badges */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs">
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                  <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span className="font-semibold text-slate-200">
                     {silo.category === 'Toitures' || silo.category === 'Façades' ? 'Basse pression douce' : 'Cloche rotative carénée'}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                  <Sparkles className="w-4 h-4 text-sky-400 shrink-0" />
+                  <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span className="font-semibold text-slate-200">
                     {silo.category === 'Toitures' ? 'Préservation étanchéité' : silo.category === 'Façades' ? 'Respect des enduits' : 'Zéro projection latérale'}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 col-span-2 sm:col-span-1">
-                  <Clock className="w-4 h-4 text-sky-400 shrink-0" />
+                  <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span className="font-semibold text-slate-200">Devis gratuit sous 48h</span>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
               <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <button
                   onClick={() => onOpenQuote(silo.shortTitle)}
-                  className="px-6 py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-black text-sm sm:text-base shadow-xl shadow-sky-500/25 flex items-center justify-center gap-2 transform active:scale-98 transition-all cursor-pointer"
+                  className="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm sm:text-base shadow-xl shadow-emerald-600/25 flex items-center justify-center gap-2 transform active:scale-98 transition-all cursor-pointer"
                 >
                   <span>{silo.ctaButton}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -140,7 +140,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                   href="tel:0624685217"
                   className="px-5 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 hover:text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-sky-400" />
+                  <Phone className="w-4 h-4 text-emerald-400" />
                   <span>06 24 68 52 17</span>
                 </a>
               </div>
@@ -157,7 +157,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
                 
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-slate-800 text-xs">
-                  <div className="flex items-center gap-2 text-sky-400 font-bold uppercase tracking-wider text-[10px]">
+                  <div className="flex items-center gap-2 text-emerald-400 font-bold uppercase tracking-wider text-[10px]">
                     <MapPin className="w-3.5 h-3.5" />
                     <span>Zone d’intervention prioritaire</span>
                   </div>
@@ -191,8 +191,8 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
             </div>
 
             {/* Solution NOVA CB */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-slate-900 border border-sky-500/30 shadow-xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 text-sky-400 text-xs font-bold uppercase">
+            <div className="p-6 sm:p-8 rounded-3xl bg-slate-900 border border-emerald-500/30 shadow-xl space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold uppercase">
                 <span>L'Approche Professionnelle <strong className="text-white font-black">NOVA CB</strong></span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white">
@@ -209,7 +209,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {silo.keyBenefits.map((benefit, idx) => (
               <div key={idx} className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">
@@ -225,7 +225,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
               onClick={() => onOpenQuote(silo.shortTitle)}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-slate-800 hover:bg-slate-750 border border-sky-500/50 hover:border-sky-400 text-white text-xs sm:text-sm font-bold shadow-md transition-all cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-sky-400" />
+              <Sparkles className="w-4 h-4 text-emerald-400" />
               <span>Faire estimer mon chantier pour {silo.shortTitle}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
@@ -245,7 +245,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
         <section className="py-12 sm:py-16 bg-slate-950 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-bold uppercase tracking-wider mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Expertise Spécialisée Gironde • Mérignac & Bordeaux</span>
               </div>
@@ -261,7 +261,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
               {/* Card 1: Démoussage toiture Mérignac */}
               <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 hover:border-sky-500/50 flex flex-col justify-between transition-all group shadow-lg">
                 <div>
-                  <div className="w-10 h-10 rounded-2xl bg-sky-500/15 border border-sky-500/30 text-sky-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <h3 className="text-base font-bold text-white mb-2">
@@ -274,7 +274,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                 <div className="pt-4 mt-4 border-t border-slate-800/80">
                   <button
                     onClick={() => onOpenQuote('Démoussage Toiture Mérignac')}
-                    className="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-sky-500 text-sky-300 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                    className="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-emerald-600 text-emerald-300 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                   >
                     <span>Devis Mérignac 48h</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -285,7 +285,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
               {/* Card 2: Démoussage toiture Bordeaux */}
               <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 hover:border-sky-500/50 flex flex-col justify-between transition-all group shadow-lg">
                 <div>
-                  <div className="w-10 h-10 rounded-2xl bg-sky-500/15 border border-sky-500/30 text-sky-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <Home className="w-5 h-5" />
                   </div>
                   <h3 className="text-base font-bold text-white mb-2">
@@ -298,7 +298,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                 <div className="pt-4 mt-4 border-t border-slate-800/80">
                   <button
                     onClick={() => onOpenQuote('Démoussage Toiture Bordeaux')}
-                    className="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-sky-500 text-sky-300 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                    className="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-emerald-600 text-emerald-300 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                   >
                     <span>Devis Bordeaux 48h</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -309,7 +309,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
               {/* Card 3: Nettoyage toiture Mérignac devis */}
               <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 hover:border-sky-500/50 flex flex-col justify-between transition-all group shadow-lg">
                 <div>
-                  <div className="w-10 h-10 rounded-2xl bg-sky-500/15 border border-sky-500/30 text-sky-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <BadgePercent className="w-5 h-5" />
                   </div>
                   <h3 className="text-base font-bold text-white mb-2">
@@ -322,7 +322,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                 <div className="pt-4 mt-4 border-t border-slate-800/80">
                   <button
                     onClick={() => onOpenQuote('Devis Nettoyage Toiture Mérignac')}
-                    className="w-full py-2.5 px-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-md shadow-sky-500/20"
+                    className="w-full py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-md shadow-emerald-600/20"
                   >
                     <span>Obtenir mon devis en 48h</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -333,7 +333,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
               {/* Card 4: Entreprise nettoyage toiture Bordeaux */}
               <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 hover:border-sky-500/50 flex flex-col justify-between transition-all group shadow-lg">
                 <div>
-                  <div className="w-10 h-10 rounded-2xl bg-sky-500/15 border border-sky-500/30 text-sky-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <h3 className="text-base font-bold text-white mb-2">
@@ -348,7 +348,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                     href="tel:0624685217"
                     className="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-750 border border-sky-500/40 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5 text-sky-400" />
+                    <Phone className="w-3.5 h-3.5 text-emerald-400" />
                     <span>06 24 68 52 17</span>
                   </a>
                 </div>
@@ -362,7 +362,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       <section className="py-12 sm:py-16 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-8">
-            <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
               Polyvalence & Adaptabilité
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white">
@@ -379,7 +379,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                 key={idx} 
                 className="p-4 rounded-2xl bg-slate-900 border border-slate-800/90 hover:border-sky-500/40 transition-all flex items-center gap-3"
               >
-                <div className="w-8 h-8 rounded-xl bg-sky-500/15 text-sky-400 flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
                   <Layers className="w-4 h-4" />
                 </div>
                 <span className="text-xs sm:text-sm font-semibold text-slate-200">
@@ -395,7 +395,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       <section className="py-12 sm:py-16 border-b border-slate-800 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
               Rigueur Artisanale
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white">
@@ -413,7 +413,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                 className="p-6 rounded-3xl bg-slate-900 border border-slate-800 relative flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-md shadow-sky-500/30">
+                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-md shadow-emerald-600/30">
                     {step.step}
                   </div>
                   <h3 className="text-base font-bold text-white mb-2">
@@ -435,26 +435,26 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-7 space-y-4">
-              <div className="text-sky-400 text-xs font-bold uppercase tracking-wider">
+              <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider">
                 Transparence & Estimation
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-white">
                 Comment est calculé le prix d’un nettoyage ?
               </h2>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Chez <strong className="text-sky-400 font-extrabold">NOVA CB</strong>, nous croyons à la transparence tarifaire. Le montant de votre devis dépend de critères objectifs et techniques :
+                Chez <strong className="text-emerald-400 font-extrabold">NOVA CB</strong>, nous croyons à la transparence tarifaire. Le montant de votre devis dépend de critères objectifs et techniques :
               </p>
 
               <ul className="space-y-2.5 pt-2">
                 {silo.pricingFactors.map((factor, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                    <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span>{factor}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="p-4 rounded-2xl bg-sky-950/40 border border-sky-500/30 text-xs text-sky-200 mt-4 leading-relaxed">
+              <div className="p-4 rounded-2xl bg-sky-950/40 border border-emerald-500/30 text-xs text-sky-200 mt-4 leading-relaxed">
                 <span className="font-extrabold text-white block mb-1">Repère d’estimation :</span>
                 {silo.pricingGuide}
               </div>
@@ -462,7 +462,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
 
             {/* Box CTA Devis */}
             <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-slate-900 border border-slate-700/80 shadow-2xl text-center space-y-5">
-              <div className="w-12 h-12 rounded-2xl bg-sky-500 text-white flex items-center justify-center mx-auto shadow-lg shadow-sky-500/30">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mx-auto shadow-lg shadow-emerald-600/30">
                 <BadgePercent className="w-6 h-6" />
               </div>
 
@@ -477,22 +477,22 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
 
               <div className="space-y-2 text-left text-xs text-slate-300 bg-slate-950/60 p-4 rounded-2xl border border-slate-800">
                 <div className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-sky-400" />
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Visite technique préalable gratuite</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-sky-400" />
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Prix ferme et définitif sans surprise</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-sky-400" />
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Artisan assuré et certifié en Gironde</span>
                 </div>
               </div>
 
               <button
                 onClick={() => onOpenQuote(silo.shortTitle)}
-                className="w-full py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-extrabold text-sm shadow-xl shadow-sky-500/30 transition-all cursor-pointer"
+                className="w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-xl shadow-emerald-600/30 transition-all cursor-pointer"
               >
                 Demander mon devis en 2 minutes
               </button>
@@ -506,7 +506,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       <section className="py-12 sm:py-16 border-b border-slate-800 bg-slate-900/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
               Questions Fréquentes
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white">
@@ -524,12 +524,12 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full py-4 px-5 text-left flex items-center justify-between gap-4 text-sm sm:text-base font-bold text-white hover:text-sky-300 transition-colors cursor-pointer"
+                    className="w-full py-4 px-5 text-left flex items-center justify-between gap-4 text-sm sm:text-base font-bold text-white hover:text-emerald-300 transition-colors cursor-pointer"
                     aria-expanded={isOpen}
                   >
                     <span>{faq.question}</span>
                     {isOpen ? (
-                      <ChevronUp className="w-4 h-4 text-sky-400 shrink-0" />
+                      <ChevronUp className="w-4 h-4 text-emerald-400 shrink-0" />
                     ) : (
                       <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
                     )}
@@ -554,7 +554,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
             {/* Silos Liés */}
             <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800">
               <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
-                <Wrench className="w-4 h-4 text-sky-400" />
+                <Wrench className="w-4 h-4 text-emerald-400" />
                 <span>Prestations complémentaires recommandées</span>
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -565,7 +565,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                     className="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-750 text-left text-xs font-semibold text-slate-200 hover:text-white border border-slate-700/60 hover:border-sky-500/40 transition-all flex items-center justify-between group cursor-pointer"
                   >
                     <span>{rel.title}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-400 transform group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-400 transform group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 ))}
               </div>
@@ -574,7 +574,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
             {/* Communes Liées */}
             <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800">
               <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-sky-400" />
+                <MapPin className="w-4 h-4 text-emerald-400" />
                 <span>Intervention dans votre commune en Gironde</span>
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
@@ -606,7 +606,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
               onClick={() => onOpenQuote(silo.shortTitle)}
-              className="px-8 py-4 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-sky-500/30 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+              className="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 cursor-pointer"
             >
               Demander mon devis gratuit
             </button>
@@ -614,7 +614,7 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
               href="tel:0624685217"
               className="px-6 py-4 rounded-2xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-sm flex items-center gap-2 transition-all"
             >
-              <Phone className="w-4 h-4 text-sky-400" />
+              <Phone className="w-4 h-4 text-emerald-400" />
               <span>Appel direct : 06 24 68 52 17</span>
             </a>
           </div>

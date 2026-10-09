@@ -29,17 +29,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
     : SERVICES.filter((s) => s.category === selectedCategory);
 
   return (
-    <div className="py-10 sm:py-16 bg-[#0b1329] text-white min-h-screen">
+    <div className="py-10 sm:py-16 bg-[#FAF8F5] text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-600/15 border border-sky-400/30 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>Catalogue complet des prestations</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-            Solutions professionnelles de <span className="text-sky-400">nettoyage & rénovation</span>
+            Solutions professionnelles de <span className="text-emerald-600">nettoyage & rénovation</span>
           </h1>
 
           <p className="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed">
@@ -54,7 +54,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   selectedCategory === cat.id
-                    ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30 font-bold'
+                    ? 'bg-emerald-600 text-white shadow-lg shadow-sky-500/30 font-bold'
                     : 'bg-[#0e1935] text-slate-300 border border-sky-900/50 hover:text-white hover:bg-slate-800'
                 }`}
               >
@@ -84,7 +84,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="bg-sky-500 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                  <span className="bg-emerald-600 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
                     Intervention NOVA CB
                   </span>
                 </div>
@@ -103,7 +103,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
                   {/* Supports grid */}
                   <div className="mb-6">
-                    <h3 className="text-xs font-bold text-sky-400 uppercase tracking-wider mb-2.5">
+                    <h3 className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2.5">
                       Supports traités :
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -112,7 +112,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                           key={idx}
                           className="flex items-center gap-2 text-xs font-medium text-slate-200 bg-[#091024] p-2.5 rounded-xl border border-sky-900/50"
                         >
-                          <Check className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                           <span>{sup}</span>
                         </div>
                       ))}
@@ -134,7 +134,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 <div className="pt-4 border-t border-sky-900/40 flex flex-col sm:flex-row items-center gap-3">
                   <button
                     onClick={() => onSelectServiceForQuote(service.title)}
-                    className="w-full sm:w-auto bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs sm:text-sm py-3 px-6 rounded-xl transition-all shadow-md shadow-sky-500/25 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm py-3 px-6 rounded-xl transition-all shadow-md shadow-sky-500/25 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Demander mon diagnostic gratuit</span>
                     <ArrowRight className="w-4 h-4" />
@@ -154,7 +154,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         {/* Informational banner about materials */}
         <div className="bg-[#0e1935] text-white rounded-3xl p-8 sm:p-10 border border-sky-900/50 text-center max-w-4xl mx-auto space-y-4 shadow-xl">
-          <div className="w-12 h-12 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center mx-auto mb-2 border border-sky-500/30">
+          <div className="w-12 h-12 rounded-2xl bg-emerald-600/20 text-emerald-600 flex items-center justify-center mx-auto mb-2 border border-sky-500/30">
             <ShieldCheck className="w-6 h-6" />
           </div>
           <h3 className="text-xl sm:text-2xl font-bold">
@@ -166,7 +166,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <div className="pt-2">
             <button
               onClick={onOpenQuote}
-              className="bg-sky-500 hover:bg-sky-400 text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-full transition-colors cursor-pointer shadow-lg shadow-sky-500/25 inline-flex items-center gap-2"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-full transition-colors cursor-pointer shadow-lg shadow-sky-500/25 inline-flex items-center gap-2"
             >
               <span>Demander un diagnostic sans engagement</span>
               <ArrowRight className="w-4 h-4" />

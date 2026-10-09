@@ -317,7 +317,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
     return (
       <div 
         id="diagnostic-form-success-container"
-        className={`bg-[#0c1630] text-white rounded-3xl p-6 sm:p-10 border border-sky-800/80 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ${className}`}
+        className={`bg-[#081B13] text-white rounded-3xl p-6 sm:p-10 border border-emerald-800/80 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ${className}`}
       >
         {/* Main Checkmark Badge */}
         <div className="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-500/40 shadow-inner">
@@ -329,7 +329,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
           <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
             Votre demande de diagnostic est bien enregistrée ✓
           </h3>
-          <p className="text-sky-300 font-bold text-base sm:text-lg">
+          <p className="text-emerald-300 font-bold text-base sm:text-lg">
             Merci pour votre confiance.
           </p>
           <p className="text-slate-300 text-sm leading-relaxed">
@@ -338,32 +338,32 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
         </div>
 
         {/* Next Steps Card as requested in Section 7 */}
-        <div className="bg-[#080f22] rounded-2xl p-5 sm:p-6 border border-sky-900/60 max-w-xl mx-auto mb-6 text-left shadow-lg">
-          <h4 className="text-xs font-black uppercase tracking-wider text-sky-400 mb-4 flex items-center gap-2">
+        <div className="bg-[#05140E] rounded-2xl p-5 sm:p-6 border border-emerald-900/60 max-w-xl mx-auto mb-6 text-left shadow-lg">
+          <h4 className="text-xs font-black uppercase tracking-wider text-emerald-400 mb-4 flex items-center gap-2">
             <Clock className="w-4 h-4" />
             <span>Prochaine étape :</span>
           </h4>
           <ol className="space-y-3.5 text-xs sm:text-sm text-slate-200">
             <li className="flex items-start gap-3">
-              <span className="w-6 h-6 rounded-full bg-sky-500/20 text-sky-300 font-bold text-xs flex items-center justify-center shrink-0 border border-sky-400/40">
+              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-xs flex items-center justify-center shrink-0 border border-emerald-400/40">
                 1
               </span>
               <span className="pt-0.5"><strong className="text-white">Nous prenons connaissance de votre demande</strong> (support : {supportSelected || 'extérieur'}).</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="w-6 h-6 rounded-full bg-sky-500/20 text-sky-300 font-bold text-xs flex items-center justify-center shrink-0 border border-sky-400/40">
+              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-xs flex items-center justify-center shrink-0 border border-emerald-400/40">
                 2
               </span>
               <span className="pt-0.5"><strong className="text-white">Nous vous recontactons</strong> par téléphone au {phone} sous 24 à 48h.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="w-6 h-6 rounded-full bg-sky-500/20 text-sky-300 font-bold text-xs flex items-center justify-center shrink-0 border border-sky-400/40">
+              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-xs flex items-center justify-center shrink-0 border border-emerald-400/40">
                 3
               </span>
               <span className="pt-0.5"><strong className="text-white">Nous réalisons le diagnostic</strong> technique sur place, gratuitement et sans engagement.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="w-6 h-6 rounded-full bg-sky-500/20 text-sky-300 font-bold text-xs flex items-center justify-center shrink-0 border border-sky-400/40">
+              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-xs flex items-center justify-center shrink-0 border border-emerald-400/40">
                 4
               </span>
               <span className="pt-0.5"><strong className="text-white">Nous vous présentons les solutions adaptées</strong> pour préserver durablement votre bien.</span>
@@ -375,7 +375,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto mb-6">
           <a
             href="tel:0624685217"
-            className="w-full bg-sky-500 hover:bg-sky-400 text-white font-extrabold py-3.5 px-4 rounded-xl shadow-lg shadow-sky-500/30 flex items-center justify-center gap-2 transition-all cursor-pointer text-sm"
+            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3.5 px-4 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 transition-all cursor-pointer text-sm"
           >
             <Phone className="w-4 h-4 text-white" />
             <span>📞 Être rappelé (06 24 68 52 17)</span>
@@ -393,7 +393,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
         </div>
 
         {/* Summary of Submitted Details */}
-        <div className="bg-[#080f22]/70 rounded-2xl p-4 max-w-xl mx-auto mb-6 text-xs text-slate-300 text-left border border-sky-900/40 space-y-1.5">
+        <div className="bg-[#05140E]/70 rounded-2xl p-4 max-w-xl mx-auto mb-6 text-xs text-slate-300 text-left border border-emerald-900/40 space-y-1.5">
           <div className="font-bold text-white pb-1 border-b border-slate-800 flex items-center justify-between">
             <span>Récapitulatif de votre diagnostic</span>
             <span className="text-emerald-400 text-[11px] font-semibold">Statut : Transmis ✓</span>
@@ -427,12 +427,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
     return (
       <div 
         id="diagnostic-intro-container"
-        className={`bg-[#0c1630] rounded-3xl p-6 sm:p-8 lg:p-10 border border-sky-800/80 shadow-2xl relative text-white ${className}`}
+        className={`bg-[#081B13] rounded-3xl p-6 sm:p-8 lg:p-10 border border-emerald-800/80 shadow-2xl relative text-white ${className}`}
       >
         <div className="max-w-xl mx-auto text-center space-y-4">
           {/* Badge */}
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-bold uppercase tracking-wider border border-sky-400/30">
-            <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider border border-emerald-400/30">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
             <span>Première étape 100% offerte & sans engagement</span>
           </div>
 
@@ -441,7 +441,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
             Demander mon diagnostic gratuit
           </h3>
 
-          <p className="text-sky-100 text-base sm:text-lg font-semibold leading-relaxed">
+          <p className="text-emerald-100 text-base sm:text-lg font-semibold leading-relaxed">
             Évaluez gratuitement l'état de votre toiture, façade, muret ou terrasse, sans engagement.
           </p>
 
@@ -451,18 +451,18 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
 
           {/* Visual Step-by-Step Preview */}
           <div className="grid grid-cols-3 gap-2 py-3 text-left">
-            <div className="bg-[#080f22] p-3 rounded-2xl border border-sky-900/50">
-              <span className="text-[10px] text-sky-400 font-bold uppercase block">Étape 1</span>
+            <div className="bg-[#05140E] p-3 rounded-2xl border border-emerald-900/50">
+              <span className="text-[10px] text-emerald-400 font-bold uppercase block">Étape 1</span>
               <span className="text-xs font-bold text-white block mt-0.5">Votre besoin</span>
               <span className="text-[11px] text-slate-400">Toiture, terrasse...</span>
             </div>
-            <div className="bg-[#080f22] p-3 rounded-2xl border border-sky-900/50">
-              <span className="text-[10px] text-sky-400 font-bold uppercase block">Étape 2</span>
+            <div className="bg-[#05140E] p-3 rounded-2xl border border-emerald-900/50">
+              <span className="text-[10px] text-emerald-400 font-bold uppercase block">Étape 2</span>
               <span className="text-xs font-bold text-white block mt-0.5">État observé</span>
               <span className="text-[11px] text-slate-400">Mousse, taches...</span>
             </div>
-            <div className="bg-[#080f22] p-3 rounded-2xl border border-sky-900/50">
-              <span className="text-[10px] text-sky-400 font-bold uppercase block">Étape 3</span>
+            <div className="bg-[#05140E] p-3 rounded-2xl border border-emerald-900/50">
+              <span className="text-[10px] text-emerald-400 font-bold uppercase block">Étape 3</span>
               <span className="text-xs font-bold text-white block mt-0.5">Coordonnées</span>
               <span className="text-[11px] text-slate-400">Réponse rapide</span>
             </div>
@@ -477,7 +477,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                 setIsStarted(true);
                 setCurrentStep(1);
               }}
-              className="w-full bg-sky-500 hover:bg-sky-400 active:scale-98 text-white font-black text-base sm:text-lg py-4 px-6 rounded-2xl shadow-xl shadow-sky-500/35 hover:shadow-sky-400/50 transition-all flex items-center justify-center gap-3 cursor-pointer group uppercase tracking-wide border border-sky-400/40"
+              className="w-full bg-emerald-600 hover:bg-emerald-500 active:scale-98 text-white font-black text-base sm:text-lg py-4 px-6 rounded-2xl shadow-xl shadow-emerald-600/35 hover:shadow-emerald-500/50 transition-all flex items-center justify-center gap-3 cursor-pointer group uppercase tracking-wide border border-emerald-400/40"
             >
               <span>DEMANDER MON DIAGNOSTIC GRATUIT</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -500,10 +500,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
             </div>
           </div>
 
-          <div className="pt-4 border-t border-sky-900/50 flex items-center justify-center gap-3 text-xs text-slate-400">
+          <div className="pt-4 border-t border-emerald-900/50 flex items-center justify-center gap-3 text-xs text-slate-400">
             <span>Ou appel direct :</span>
-            <a href="tel:0624685217" className="text-sky-300 hover:text-white font-extrabold flex items-center gap-1">
-              <Phone className="w-3.5 h-3.5 text-sky-400" />
+            <a href="tel:0624685217" className="text-emerald-300 hover:text-white font-extrabold flex items-center gap-1">
+              <Phone className="w-3.5 h-3.5 text-emerald-400" />
               <span>06 24 68 52 17</span>
             </a>
           </div>
@@ -518,12 +518,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
   return (
     <div 
       id="diagnostic-form-wrapper"
-      className={`bg-[#0c1630] rounded-3xl p-6 sm:p-8 lg:p-10 border border-sky-800/80 shadow-2xl relative text-white ${className}`}
+      className={`bg-[#081B13] rounded-3xl p-6 sm:p-8 lg:p-10 border border-emerald-800/80 shadow-2xl relative text-white ${className}`}
     >
       {/* Progress Bar Header */}
       <div className="mb-6">
         <div className="flex items-center justify-between text-xs mb-2">
-          <span className="font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5">
+          <span className="font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Diagnostic gratuit sans engagement</span>
           </span>
@@ -533,9 +533,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
         </div>
 
         {/* Progress track */}
-        <div className="w-full bg-[#080f22] h-2 rounded-full overflow-hidden border border-sky-900/50">
+        <div className="w-full bg-[#05140E] h-2 rounded-full overflow-hidden border border-emerald-900/50">
           <div 
-            className="bg-gradient-to-r from-sky-500 to-sky-400 h-full rounded-full transition-all duration-300"
+            className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-full rounded-full transition-all duration-300"
             style={{ width: `${(currentStep / 4) * 100}%` }}
           ></div>
         </div>
@@ -577,17 +577,17 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                   }}
                   className={`p-4 rounded-2xl text-left border transition-all cursor-pointer flex items-start gap-3.5 group relative ${
                     isSelected
-                      ? 'bg-sky-950/80 border-sky-400 shadow-lg shadow-sky-500/20 ring-1 ring-sky-400'
-                      : 'bg-[#080f22] border-sky-900/50 hover:border-sky-600 hover:bg-[#0c1630]'
+                      ? 'bg-emerald-950/80 border-emerald-400 shadow-lg shadow-emerald-600/20 ring-1 ring-emerald-400'
+                      : 'bg-[#05140E] border-emerald-900/50 hover:border-emerald-600 hover:bg-[#081B13]'
                   }`}
                 >
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0 transition-transform ${
-                    isSelected ? 'bg-sky-500 text-white scale-105' : 'bg-slate-900 border border-sky-900/60'
+                    isSelected ? 'bg-emerald-600 text-white scale-105' : 'bg-slate-900 border border-emerald-900/60'
                   }`}>
                     <span>{item.icon}</span>
                   </div>
                   <div className="flex-1 pr-6">
-                    <span className="font-extrabold text-white text-sm sm:text-base block group-hover:text-sky-300 transition-colors">
+                    <span className="font-extrabold text-white text-sm sm:text-base block group-hover:text-emerald-300 transition-colors">
                       {item.label}
                     </span>
                     <span className="text-slate-400 text-xs block mt-0.5 leading-snug">
@@ -595,7 +595,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                     </span>
                   </div>
                   {isSelected && (
-                    <div className="absolute top-3.5 right-3.5 w-5 h-5 rounded-full bg-sky-500 text-white flex items-center justify-center">
+                    <div className="absolute top-3.5 right-3.5 w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center">
                       <Check className="w-3.5 h-3.5 stroke-[3]" />
                     </div>
                   )}
@@ -605,7 +605,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
           </div>
 
           {/* Navigation Controls */}
-          <div className="pt-4 border-t border-sky-900/50 flex items-center justify-between gap-3">
+          <div className="pt-4 border-t border-emerald-900/50 flex items-center justify-between gap-3">
             <button
               type="button"
               onClick={handlePrevStep}
@@ -617,7 +617,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
             <button
               type="button"
               onClick={handleNextStep}
-              className="bg-sky-500 hover:bg-sky-400 active:scale-95 text-white font-extrabold text-sm py-3 px-6 rounded-xl shadow-lg shadow-sky-500/25 transition-all flex items-center gap-2 cursor-pointer"
+              className="bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-extrabold text-sm py-3 px-6 rounded-xl shadow-lg shadow-emerald-600/25 transition-all flex items-center gap-2 cursor-pointer"
             >
               <span>Continuer</span>
               <ArrowRight className="w-4 h-4" />
@@ -641,8 +641,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
           </div>
 
           {/* Helper Reassurance Note as requested in Section 4 */}
-          <div className="p-3.5 rounded-2xl bg-sky-950/60 border border-sky-600/40 text-xs text-sky-200 flex items-start gap-2.5">
-            <HelpCircle className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+          <div className="p-3.5 rounded-2xl bg-emerald-950/60 border border-emerald-600/40 text-xs text-emerald-200 flex items-start gap-2.5">
+            <HelpCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
             <span>
               <strong>Vous n'êtes pas certain du problème ?</strong> Aucun souci, nous pouvons vous aider à l'identifier.
             </span>
@@ -659,13 +659,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                   onClick={() => handleToggleProblem(prob)}
                   className={`p-3 rounded-xl text-left border text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center justify-between ${
                     isSelected
-                      ? 'bg-sky-500 text-white border-sky-400 shadow-md shadow-sky-500/25'
-                      : 'bg-[#080f22] text-slate-200 border-sky-900/50 hover:border-sky-600 hover:text-white'
+                      ? 'bg-emerald-600 text-white border-emerald-400 shadow-md shadow-emerald-600/25'
+                      : 'bg-[#05140E] text-slate-200 border-emerald-900/50 hover:border-emerald-600 hover:text-white'
                   }`}
                 >
                   <span className="truncate pr-1">{prob}</span>
                   <div className={`w-4 h-4 rounded flex items-center justify-center shrink-0 border ${
-                    isSelected ? 'bg-white text-sky-600 border-white' : 'border-slate-700 bg-slate-900'
+                    isSelected ? 'bg-white text-emerald-600 border-white' : 'border-slate-700 bg-slate-900'
                   }`}>
                     {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
                   </div>
@@ -675,7 +675,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
           </div>
 
           {/* Navigation Controls */}
-          <div className="pt-4 border-t border-sky-900/50 flex items-center justify-between gap-3">
+          <div className="pt-4 border-t border-emerald-900/50 flex items-center justify-between gap-3">
             <button
               type="button"
               onClick={handlePrevStep}
@@ -688,7 +688,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
             <button
               type="button"
               onClick={handleNextStep}
-              className="bg-sky-500 hover:bg-sky-400 active:scale-95 text-white font-extrabold text-sm py-3 px-6 rounded-xl shadow-lg shadow-sky-500/25 transition-all flex items-center gap-2 cursor-pointer"
+              className="bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-extrabold text-sm py-3 px-6 rounded-xl shadow-lg shadow-emerald-600/25 transition-all flex items-center gap-2 cursor-pointer"
             >
               <span>Continuer</span>
               <ArrowRight className="w-4 h-4" />
@@ -716,7 +716,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               <div>
                 <label className="block text-xs font-bold text-slate-200 mb-1">
-                  Nom / Prénom <span className="text-sky-400">*</span>
+                  Nom / Prénom <span className="text-emerald-400">*</span>
                 </label>
                 <input
                   type="text"
@@ -724,13 +724,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                   placeholder="Ex : Christophe B."
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-sky-900/60 bg-[#080f22] text-white placeholder:text-slate-500 text-sm focus:border-sky-400 focus:ring-1 focus:ring-sky-400 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-emerald-900/60 bg-[#05140E] text-white placeholder:text-slate-500 text-sm focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 outline-none transition-all"
                 />
               </div>
 
               <div>
                 <label className="block text-xs font-bold text-slate-200 mb-1">
-                  Téléphone <span className="text-sky-400">*</span>
+                  Téléphone <span className="text-emerald-400">*</span>
                 </label>
                 <input
                   type="tel"
@@ -738,7 +738,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                   placeholder="Ex : 06 24 68 52 17"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-sky-900/60 bg-[#080f22] text-white placeholder:text-slate-500 text-sm focus:border-sky-400 focus:ring-1 focus:ring-sky-400 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-emerald-900/60 bg-[#05140E] text-white placeholder:text-slate-500 text-sm focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 outline-none transition-all"
                 />
               </div>
             </div>
@@ -747,7 +747,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               <div>
                 <label className="block text-xs font-bold text-slate-200 mb-1">
-                  E-mail <span className="text-sky-400">*</span>
+                  E-mail <span className="text-emerald-400">*</span>
                 </label>
                 <input
                   type="email"
@@ -755,7 +755,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                   placeholder="Ex : contact@exemple.fr"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-sky-900/60 bg-[#080f22] text-white placeholder:text-slate-500 text-sm focus:border-sky-400 focus:ring-1 focus:ring-sky-400 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-emerald-900/60 bg-[#05140E] text-white placeholder:text-slate-500 text-sm focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 outline-none transition-all"
                 />
               </div>
 
@@ -768,7 +768,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                   placeholder="Ex : 33 avenue Léon Blum"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-sky-900/60 bg-[#080f22] text-white placeholder:text-slate-500 text-sm focus:border-sky-400 focus:ring-1 focus:ring-sky-400 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-emerald-900/60 bg-[#05140E] text-white placeholder:text-slate-500 text-sm focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 outline-none transition-all"
                 />
               </div>
             </div>
@@ -784,7 +784,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                   placeholder="33700"
                   value={postalCode}
                   onChange={(e) => setPostalCode(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-sky-900/60 bg-[#080f22] text-white placeholder:text-slate-500 text-sm focus:border-sky-400 focus:ring-1 focus:ring-sky-400 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-emerald-900/60 bg-[#05140E] text-white placeholder:text-slate-500 text-sm focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 outline-none transition-all"
                 />
               </div>
 
@@ -797,22 +797,22 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                   placeholder="Mérignac, Bordeaux..."
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-sky-900/60 bg-[#080f22] text-white placeholder:text-slate-500 text-sm focus:border-sky-400 focus:ring-1 focus:ring-sky-400 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-emerald-900/60 bg-[#05140E] text-white placeholder:text-slate-500 text-sm focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 outline-none transition-all"
                 />
               </div>
             </div>
 
             {/* 5. PHOTO — ÉLÉMENT DE CONVERSION (Facultatif) */}
-            <div className="pt-2 border-t border-sky-900/50">
-              <div className="bg-[#080f22] p-4 rounded-2xl border border-sky-900/50 space-y-3">
+            <div className="pt-2 border-t border-emerald-900/50">
+              <div className="bg-[#05140E] p-4 rounded-2xl border border-emerald-900/50 space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Camera className="w-4 h-4 text-sky-400" />
+                    <Camera className="w-4 h-4 text-emerald-400" />
                     <span className="text-xs font-bold text-white">
                       Une photo peut nous aider à préparer votre diagnostic.
                     </span>
                   </div>
-                  <span className="text-[10px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded-full font-semibold border border-sky-500/30">
+                  <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-semibold border border-emerald-500/30">
                     Facultatif
                   </span>
                 </div>
@@ -836,7 +836,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 hover:text-white border border-sky-700/60 text-xs font-bold transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 hover:text-white border border-emerald-700/60 text-xs font-bold transition-colors cursor-pointer"
                     >
                       <Camera className="w-3.5 h-3.5" />
                       <span>+ Ajouter une photo ({photos.length}/3)</span>
@@ -848,7 +848,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                 {photos.length > 0 && (
                   <div className="grid grid-cols-3 gap-2.5 pt-2">
                     {photos.map((item) => (
-                      <div key={item.id} className="relative group rounded-xl overflow-hidden border border-sky-900/60 bg-black aspect-video">
+                      <div key={item.id} className="relative group rounded-xl overflow-hidden border border-emerald-900/60 bg-black aspect-video">
                         <img 
                           src={item.previewUrl} 
                           alt={item.name} 
@@ -876,7 +876,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
                   type="checkbox"
                   checked={consentContact}
                   onChange={(e) => setConsentContact(e.target.checked)}
-                  className="w-4 h-4 mt-0.5 rounded text-sky-500 bg-[#080f22] border-sky-700 focus:ring-0 cursor-pointer"
+                  className="w-4 h-4 mt-0.5 rounded text-emerald-600 bg-[#05140E] border-emerald-700 focus:ring-0 cursor-pointer"
                 />
                 <span>
                   J'accepte d'être recontacté concernant ma demande de diagnostic gratuit.
@@ -886,7 +886,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
           </div>
 
           {/* Navigation Controls */}
-          <div className="pt-4 border-t border-sky-900/50 flex items-center justify-between gap-3">
+          <div className="pt-4 border-t border-emerald-900/50 flex items-center justify-between gap-3">
             <button
               type="button"
               onClick={handlePrevStep}
@@ -899,7 +899,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
             <button
               type="button"
               onClick={handleNextStep}
-              className="bg-sky-500 hover:bg-sky-400 active:scale-95 text-white font-extrabold text-sm py-3 px-6 rounded-xl shadow-lg shadow-sky-500/25 transition-all flex items-center gap-2 cursor-pointer"
+              className="bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-extrabold text-sm py-3 px-6 rounded-xl shadow-lg shadow-emerald-600/25 transition-all flex items-center gap-2 cursor-pointer"
             >
               <span>Vérifier mon résumé</span>
               <ArrowRight className="w-4 h-4" />
@@ -923,10 +923,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
           </div>
 
           {/* Clean Summary Card */}
-          <div className="bg-[#080f22] rounded-2xl p-4 sm:p-5 border border-sky-900/60 text-xs sm:text-sm space-y-2.5 text-slate-200">
+          <div className="bg-[#05140E] rounded-2xl p-4 sm:p-5 border border-emerald-900/60 text-xs sm:text-sm space-y-2.5 text-slate-200">
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
               <span className="text-slate-400 font-medium">Support sélectionné :</span>
-              <span className="font-extrabold text-white bg-sky-500/20 text-sky-300 px-2.5 py-0.5 rounded-full border border-sky-400/30">
+              <span className="font-extrabold text-white bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full border border-emerald-400/30">
                 {supportSelected || 'Toiture'}
               </span>
             </div>
@@ -945,7 +945,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
 
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
               <span className="text-slate-400 font-medium">Téléphone :</span>
-              <span className="font-bold text-sky-400">{phone}</span>
+              <span className="font-bold text-emerald-400">{phone}</span>
             </div>
 
             <div className="flex items-center justify-between pb-2 border-b border-slate-800">
@@ -978,7 +978,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
               type="button"
               disabled={isSubmitting}
               onClick={() => handleSubmitDiagnostic()}
-              className="w-full bg-sky-500 hover:bg-sky-400 active:scale-98 text-white font-black text-base sm:text-lg py-4 px-6 rounded-2xl shadow-xl shadow-sky-500/35 hover:shadow-sky-400/50 transition-all flex items-center justify-center gap-3 cursor-pointer group uppercase tracking-wide border border-sky-400/40 disabled:opacity-75"
+              className="w-full bg-emerald-600 hover:bg-emerald-500 active:scale-98 text-white font-black text-base sm:text-lg py-4 px-6 rounded-2xl shadow-xl shadow-emerald-600/35 hover:shadow-emerald-500/50 transition-all flex items-center justify-center gap-3 cursor-pointer group uppercase tracking-wide border border-emerald-400/40 disabled:opacity-75"
             >
               {isSubmitting ? (
                 <span className="flex items-center gap-2">

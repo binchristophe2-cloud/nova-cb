@@ -319,7 +319,7 @@ export default function App() {
   const activeCity = currentCitySlug ? LOCAL_CITY_SILOS[currentCitySlug] : null;
 
   return (
-    <div className="min-h-screen bg-[#F2F7FA] text-slate-100 flex flex-col selection:bg-sky-500 selection:text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-slate-900 flex flex-col selection:bg-emerald-600 selection:text-white">
       {/* Toast Notification */}
       <NotificationToast
         notification={notification}

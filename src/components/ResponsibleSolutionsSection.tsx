@@ -18,13 +18,13 @@ export const ResponsibleSolutionsSection: React.FC<ResponsibleSolutionsSectionPr
     : PRODUCTS_CATALOG.filter(p => p.category === categoryFilter);
 
   return (
-    <section className="my-10 rounded-3xl bg-slate-900 border border-slate-800 p-6 sm:p-8 relative overflow-hidden shadow-xl">
+    <section className="my-10 rounded-3xl bg-[#071912] border border-emerald-950/70 p-6 sm:p-8 relative overflow-hidden shadow-xl text-white">
       {/* Decorative gradient corner */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
 
       <div className="relative z-10 space-y-6">
         {/* Header badge & title */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-emerald-900/60 pb-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
               <Leaf className="w-3.5 h-3.5" />
@@ -38,7 +38,7 @@ export const ResponsibleSolutionsSection: React.FC<ResponsibleSolutionsSectionPr
           {onOpenQuote && (
             <button
               onClick={onOpenQuote}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs sm:text-sm font-extrabold transition-all shadow-md shadow-emerald-500/20 cursor-pointer shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-extrabold transition-all shadow-md shadow-emerald-600/30 cursor-pointer shrink-0"
             >
               <span>Demander conseil support</span>
               <ArrowRight className="w-4 h-4" />
@@ -47,11 +47,11 @@ export const ResponsibleSolutionsSection: React.FC<ResponsibleSolutionsSectionPr
         </div>
 
         {/* Framing text */}
-        <div className="text-slate-300 text-sm sm:text-base leading-relaxed space-y-2">
+        <div className="text-emerald-100/90 text-sm sm:text-base leading-relaxed space-y-2">
           <p>
             Pour nos prestations de nettoyage et d’entretien extérieur en Gironde, <strong>Nova Entretien</strong> privilégie, lorsque cela est techniquement adapté au support, des solutions à base d’ingrédients d’origine naturelle et des produits bénéficiant de certifications environnementales reconnues.
           </p>
-          <p className="text-slate-400 text-xs sm:text-sm">
+          <p className="text-emerald-200/70 text-xs sm:text-sm">
             Notre objectif : associer efficacité du traitement, respect du support et réduction de l’impact environnemental lorsque les conditions du chantier le permettent.
           </p>
         </div>
@@ -62,7 +62,7 @@ export const ResponsibleSolutionsSection: React.FC<ResponsibleSolutionsSectionPr
             {filteredProducts.map((prod) => (
               <div 
                 key={prod.id}
-                className="rounded-2xl bg-slate-950/80 border border-slate-800/90 p-5 flex flex-col justify-between hover:border-emerald-500/40 transition-colors"
+                className="rounded-2xl bg-[#091F17]/90 border border-emerald-800/80 p-5 flex flex-col justify-between hover:border-emerald-500/60 transition-colors shadow-sm"
               >
                 <div className="space-y-3">
                   {/* Badges row */}
@@ -74,20 +74,20 @@ export const ResponsibleSolutionsSection: React.FC<ResponsibleSolutionsSectionPr
                       </span>
                     )}
                     {prod.isNaturalOrigin && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-sky-500/20 text-sky-300 border border-sky-500/40 text-[10px] font-bold">
-                        <Leaf className="w-3 h-3 text-sky-400" />
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-teal-500/20 text-teal-300 border border-teal-500/40 text-[10px] font-bold">
+                        <Leaf className="w-3 h-3 text-teal-400" />
                         Origine Naturelle
                       </span>
                     )}
                     {prod.isMadeInFrance && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 border border-slate-700 text-[10px] font-medium">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#0c2b20] text-emerald-200 border border-emerald-700/60 text-[10px] font-medium">
                         🇫🇷 Formulé en France
                       </span>
                     )}
                   </div>
 
                   <div>
-                    <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">
+                    <div className="text-[10px] uppercase font-bold text-emerald-400/80 tracking-wider">
                       {prod.category} • Solution Éco-responsable
                     </div>
                     <h4 className="text-sm font-bold text-white mt-0.5">
@@ -95,25 +95,25 @@ export const ResponsibleSolutionsSection: React.FC<ResponsibleSolutionsSectionPr
                     </h4>
                   </div>
 
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="text-xs text-emerald-100/80 leading-relaxed">
                     {prod.description}
                   </p>
 
-                  <div className="pt-2 border-t border-slate-800/60 space-y-1.5 text-xs">
-                    <div className="text-slate-400">
-                      <strong className="text-slate-300">Supports compatibles :</strong> {prod.supports.slice(0, 3).join(', ')}...
+                  <div className="pt-2 border-t border-emerald-900/60 space-y-1.5 text-xs">
+                    <div className="text-emerald-200/70">
+                      <strong className="text-white">Supports compatibles :</strong> {prod.supports.slice(0, 3).join(', ')}...
                     </div>
-                    <div className="text-slate-400">
-                      <strong className="text-slate-300">Application :</strong> {prod.applicationMethod}
+                    <div className="text-emerald-200/70">
+                      <strong className="text-white">Application :</strong> {prod.applicationMethod}
                     </div>
-                    <div className="text-slate-400">
-                      <strong className="text-slate-300">Action :</strong> {prod.actionTime}
+                    <div className="text-emerald-200/70">
+                      <strong className="text-white">Action :</strong> {prod.actionTime}
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
-                  <span className="text-slate-500 italic">
+                <div className="mt-4 pt-3 border-t border-emerald-900/60 flex items-center justify-between text-[11px]">
+                  <span className="text-emerald-300/60 italic">
                     Utilisé selon compatibilité chantier
                   </span>
                   <span className="inline-flex items-center gap-1 text-emerald-400 font-semibold">
@@ -127,7 +127,7 @@ export const ResponsibleSolutionsSection: React.FC<ResponsibleSolutionsSectionPr
         )}
 
         {/* Responsible Method Banner */}
-        <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-400">
+        <div className="p-4 rounded-2xl bg-[#091F17]/70 border border-emerald-900/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-emerald-200/70">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>

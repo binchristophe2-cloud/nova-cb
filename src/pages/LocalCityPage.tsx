@@ -48,7 +48,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
   ];
 
   return (
-    <article className="min-h-screen bg-slate-950 text-slate-100">
+    <article className="min-h-screen bg-[#FAF8F5] text-stone-900">
       <SeoHead
         title={city.title}
         description={city.metaDescription}
@@ -58,30 +58,30 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
       />
 
       {/* Breadcrumb Navigation */}
-      <nav aria-label="Fil d'Ariane" className="bg-slate-900/80 border-b border-slate-800 text-xs py-3 px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Fil d'Ariane" className="bg-stone-100 border-b border-stone-200 text-xs py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center space-x-2 text-slate-400">
           <button 
             onClick={onNavigateHome}
             className="flex items-center hover:text-white transition-colors cursor-pointer"
           >
-            <Home className="w-3.5 h-3.5 mr-1 text-sky-400" />
+            <Home className="w-3.5 h-3.5 mr-1 text-emerald-400" />
             <span>Accueil</span>
           </button>
           <ChevronRight className="w-3 h-3 text-slate-600" />
           <span>Secteurs d’intervention</span>
           <ChevronRight className="w-3 h-3 text-slate-600" />
-          <span className="text-sky-400 font-semibold truncate">{city.cityName} ({city.postalCode})</span>
+          <span className="text-emerald-400 font-semibold truncate">{city.cityName} ({city.postalCode})</span>
         </div>
       </nav>
 
       {/* Hero Section Locale */}
-      <section className="relative py-12 lg:py-16 overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-slate-900/90 to-slate-950">
+      <section className="relative py-12 lg:py-16 overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-[#071912] to-[#0a261c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-bold tracking-wide uppercase">
-                <MapPin className="w-3.5 h-3.5 text-sky-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold tracking-wide uppercase">
+                <MapPin className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Intervention locale • {city.cityName} ({city.postalCode})</span>
               </div>
 
@@ -96,15 +96,15 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
               {/* Badges Artisan de Proximité */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs">
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                  <Clock className="w-4 h-4 text-sky-400 shrink-0" />
+                  <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span className="font-semibold text-slate-200">Visite sous 24-48h</span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                  <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span className="font-semibold text-slate-200">Zéro frais de déplacement</span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 col-span-2 sm:col-span-1">
-                  <Sparkles className="w-4 h-4 text-sky-400 shrink-0" />
+                  <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span className="font-semibold text-slate-200">Basse pression & Cloche</span>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
               <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <button
                   onClick={() => onOpenQuote(`Devis ${city.cityName}`)}
-                  className="px-6 py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-black text-sm sm:text-base shadow-xl shadow-sky-500/25 flex items-center justify-center gap-2 transform active:scale-98 transition-all cursor-pointer"
+                  className="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm sm:text-base shadow-xl shadow-emerald-600/25 flex items-center justify-center gap-2 transform active:scale-98 transition-all cursor-pointer"
                 >
                   <span>Demander mon devis à {city.cityName}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -123,7 +123,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
                   href="tel:0624685217"
                   className="px-5 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 hover:text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-sky-400" />
+                  <Phone className="w-4 h-4 text-emerald-400" />
                   <span>06 24 68 52 17</span>
                 </a>
               </div>
@@ -133,12 +133,12 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
             <div className="lg:col-span-5">
               <div className="rounded-3xl bg-slate-900 border border-slate-700 p-6 shadow-2xl space-y-5">
                 <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
-                  <div className="w-10 h-10 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-black">
+                  <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black">
                     <Building2 className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-white font-black text-base flex items-center gap-1.5">
-                      <span className="text-sky-400">NOVA CB</span> Gironde
+                      <span className="text-emerald-400">NOVA CB</span> Gironde
                     </div>
                     <div className="text-xs text-slate-400">Siège social : 33 avenue Léon Blum, 33700 Mérignac</div>
                   </div>
@@ -146,21 +146,21 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
 
                 <div className="space-y-3 text-xs">
                   <div className="flex items-start gap-2.5 text-slate-300">
-                    <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                    <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span><strong>Secteur :</strong> {city.cityName} ({city.postalCode}) et communes limitrophes</span>
                   </div>
                   <div className="flex items-start gap-2.5 text-slate-300">
-                    <Clock className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                    <Clock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span><strong>Disponibilité :</strong> Du Lundi au Samedi de 8h00 à 19h00</span>
                   </div>
                   <div className="flex items-start gap-2.5 text-slate-300">
-                    <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span><strong>Garantie :</strong> Assurance professionnelle artisanale</span>
                   </div>
                 </div>
 
                 <div className="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800 text-xs text-slate-300">
-                  <div className="font-bold text-sky-400 mb-1">Quartiers desservis à {city.cityName} :</div>
+                  <div className="font-bold text-emerald-400 mb-1">Quartiers desservis à {city.cityName} :</div>
                   <div className="flex flex-wrap gap-1.5 mt-1">
                     {city.neighborhoods.map((q, i) => (
                       <span key={i} className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 text-[11px]">
@@ -172,7 +172,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
 
                 <button
                   onClick={() => onOpenQuote(`Devis ${city.cityName}`)}
-                  className="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs shadow-md transition-colors cursor-pointer"
+                  className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md transition-colors cursor-pointer"
                 >
                   Obtenir une estimation sous 48h
                 </button>
@@ -189,7 +189,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 text-sky-400 text-xs font-bold uppercase">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold uppercase">
                 <TreePine className="w-3.5 h-3.5" />
                 <span>Contexte & Climat Local</span>
               </div>
@@ -227,7 +227,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
               <ul className="space-y-2.5">
                 {city.typicalSurfaces.map((surf, idx) => (
                   <li key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-slate-800/70 border border-slate-700/60 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>{surf}</span>
                   </li>
                 ))}
@@ -242,7 +242,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
       <section className="py-12 sm:py-16 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
               Savoir-Faire Adapté
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white">
@@ -254,7 +254,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
             {city.recommendedServices.map((service, idx) => (
               <div key={idx} className="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
-                  <div className="w-8 h-8 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
                     0{idx + 1}
                   </div>
                   <h3 className="text-sm font-bold text-white">
@@ -263,7 +263,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
                 </div>
                 <button
                   onClick={() => onOpenQuote(service)}
-                  className="text-sky-400 hover:text-sky-300 font-bold text-xs flex items-center gap-1 group cursor-pointer"
+                  className="text-emerald-400 hover:text-emerald-300 font-bold text-xs flex items-center gap-1 group cursor-pointer"
                 >
                   <span>Diagnostic gratuit</span>
                   <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -278,7 +278,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
       <section className="py-12 sm:py-16 border-b border-slate-800 bg-slate-900/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
               Intervention à {city.cityName}
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white">
@@ -296,11 +296,11 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full py-4 px-5 text-left flex items-center justify-between gap-4 text-sm sm:text-base font-bold text-white hover:text-sky-300 transition-colors cursor-pointer"
+                    className="w-full py-4 px-5 text-left flex items-center justify-between gap-4 text-sm sm:text-base font-bold text-white hover:text-emerald-300 transition-colors cursor-pointer"
                   >
                     <span>{faq.question}</span>
                     {isOpen ? (
-                      <ChevronUp className="w-4 h-4 text-sky-400 shrink-0" />
+                      <ChevronUp className="w-4 h-4 text-emerald-400 shrink-0" />
                     ) : (
                       <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
                     )}
@@ -363,7 +363,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
               onClick={() => onOpenQuote(`Diagnostic ${city.cityName}`)}
-              className="px-8 py-4 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-sky-500/30 transition-all cursor-pointer"
+              className="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-600/30 transition-all cursor-pointer"
             >
               Demander mon diagnostic gratuit pour {city.cityName}
             </button>
@@ -371,7 +371,7 @@ export const LocalCityPage: React.FC<LocalCityPageProps> = ({
               href="tel:0624685217"
               className="px-6 py-4 rounded-2xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-sm flex items-center gap-2 transition-all"
             >
-              <Phone className="w-4 h-4 text-sky-400" />
+              <Phone className="w-4 h-4 text-emerald-400" />
               <span>06 24 68 52 17</span>
             </a>
           </div>
