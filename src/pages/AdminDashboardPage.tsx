@@ -15,7 +15,6 @@ import {
   SlidersHorizontal, 
   Layers, 
   MapPin, 
-  Sparkles, 
   Target, 
   AlertCircle, 
   ChevronRight, 
@@ -34,7 +33,10 @@ import {
   X,
   FileCheck2,
   Gauge,
-  Leaf
+  Leaf,
+  Cpu,
+  Wallet,
+  CheckCheck
 } from 'lucide-react';
 import { AdminUser, SeoKeywordItem, KeywordStatus, SeoMetricsData } from '../types';
 import { SERVICE_SILOS } from '../data/silosData';
@@ -363,7 +365,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({
           {[
             { id: 'dashboard', label: 'Dashboard & Pilotage', icon: BarChart3 },
             { id: 'matrice', label: `Matrice SEO (${matrix.length})`, icon: Database },
-            { id: 'mots-cles', label: 'Mots-Clés & Intentions', icon: Sparkles },
+            { id: 'mots-cles', label: 'Mots-Clés & Intentions', icon: Target },
             { id: 'pages', label: 'Pages SEO & Silos', icon: Layers },
             { id: 'produits', label: 'Référentiel Produits & Chiffrage', icon: Leaf },
             { id: 'local', label: 'SEO Local Gironde', icon: MapPin },
@@ -451,7 +453,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({
                   <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
                     <div className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-1 flex items-center justify-between">
                       <span>Mots-Clés Stratégiques</span>
-                      <Sparkles className="w-4 h-4 text-sky-400" />
+                      <Target className="w-4 h-4 text-sky-400" />
                     </div>
                     <div className="text-3xl font-black text-white mt-2">
                       {metrics?.totalKeywords || matrix.length}
@@ -894,7 +896,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({
                       onClick={() => handleOpenSiloFeeder(selectedFeederSilo)}
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs transition-colors cursor-pointer shadow-sm shadow-sky-500/20"
                     >
-                      <Sparkles className="w-4 h-4 text-slate-950" />
+                      <PlusCircle className="w-4 h-4 text-slate-950" />
                       <span>Alimenter le silo</span>
                     </button>
                   </div>
@@ -944,7 +946,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({
                             onClick={() => handleOpenSiloFeeder(siloKey)}
                             className="inline-flex items-center gap-1 text-[11px] font-bold text-sky-400 hover:text-sky-300 transition-colors cursor-pointer"
                           >
-                            <Sparkles className="w-3 h-3 text-sky-400" />
+                            <PlusCircle className="w-3 h-3 text-sky-400" />
                             <span>Alimenter ce silo</span>
                           </button>
                         </div>
@@ -1132,6 +1134,139 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({
                   </div>
                 </div>
 
+                {/* Audit & Contrôle des Coûts : Mode 100% Sans IA */}
+                <div className="p-6 rounded-3xl bg-slate-900 border border-emerald-900/40 relative overflow-hidden space-y-5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+                    <div>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-[11px] font-extrabold uppercase tracking-wider mb-2 border border-emerald-500/30">
+                        <CheckCheck className="w-3.5 h-3.5" />
+                        <span>Architecture 100% Sans Agent IA & Zéro Coût Facturable</span>
+                      </div>
+                      <h3 className="text-lg font-black text-white">
+                        Contrôle de Facturation & Traçabilité des Dépendances
+                      </h3>
+                      <p className="text-xs text-slate-400 mt-0.5">
+                        Audit technique permanent certifiant l'absence totale de consommation d'API ou de tokens payants.
+                      </p>
+                    </div>
+
+                    <div className="px-3.5 py-2 rounded-2xl bg-emerald-950/60 border border-emerald-500/30 text-right shrink-0">
+                      <div className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Consommation IA</div>
+                      <div className="text-lg font-black text-emerald-300">0,00 € / mois</div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+                    <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 space-y-2">
+                      <div className="font-bold text-white flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <Cpu className="w-4 h-4 text-emerald-400" />
+                          <span>Modèles LLM & IA</span>
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 text-[10px] font-bold">
+                          Inexistant
+                        </span>
+                      </div>
+                      <p className="text-slate-400 text-[11px] leading-relaxed">
+                        Aucun SDK Gemini, OpenAI ou Claude. Aucun token d'entrée/sortie consommé. Aucune requête automatique vers un LLM.
+                      </p>
+                      <div className="text-emerald-400 text-[10px] font-bold flex items-center gap-1 pt-1 border-t border-slate-850">
+                        <CheckCircle2 className="w-3 h-3" /> 0 token / 0 €
+                      </div>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 space-y-2">
+                      <div className="font-bold text-white flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <Globe className="w-4 h-4 text-emerald-400" />
+                          <span>Google Cloud & APIs</span>
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 text-[10px] font-bold">
+                          Zéro API Payante
+                        </span>
+                      </div>
+                      <p className="text-slate-400 text-[11px] leading-relaxed">
+                        Aucun service payant Vertex AI, Cloud Functions ou Cloud Scheduler rattaché. Le serveur tourne de manière autonome.
+                      </p>
+                      <div className="text-emerald-400 text-[10px] font-bold flex items-center gap-1 pt-1 border-t border-slate-850">
+                        <CheckCircle2 className="w-3 h-3" /> 0 appel facturable
+                      </div>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 space-y-2">
+                      <div className="font-bold text-white flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-emerald-400" />
+                          <span>Google Maps & Places</span>
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 text-[10px] font-bold">
+                          Non Facturable
+                        </span>
+                      </div>
+                      <p className="text-slate-400 text-[11px] leading-relaxed">
+                        Aucun script Google Maps JS API ou Places facturable n'est injecté. Le maillage géographique utilise des données statiques locales.
+                      </p>
+                      <div className="text-emerald-400 text-[10px] font-bold flex items-center gap-1 pt-1 border-t border-slate-850">
+                        <CheckCircle2 className="w-3 h-3" /> 0 coût Maps
+                      </div>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 space-y-2">
+                      <div className="font-bold text-white flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <Building2 className="w-4 h-4 text-emerald-400" />
+                          <span>Google Business Profile</span>
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 text-[10px] font-bold">
+                          Gestion Directe
+                        </span>
+                      </div>
+                      <p className="text-slate-400 text-[11px] leading-relaxed">
+                        Aucune connexion API automatisée. Votre fiche Google Business reste sous votre contrôle direct depuis l'interface officielle Google, sans frais.
+                      </p>
+                      <div className="text-emerald-400 text-[10px] font-bold flex items-center gap-1 pt-1 border-t border-slate-850">
+                        <CheckCircle2 className="w-3 h-3" /> Fiche préservée
+                      </div>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 space-y-2">
+                      <div className="font-bold text-white flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-emerald-400" />
+                          <span>Automatisations & Cron</span>
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 text-[10px] font-bold">
+                          0 Tâche Programmée
+                        </span>
+                      </div>
+                      <p className="text-slate-400 text-[11px] leading-relaxed">
+                        Aucun robot de crawl payant, aucun scheduler d'arrière-plan périodique, aucun webhook externe payant.
+                      </p>
+                      <div className="text-emerald-400 text-[10px] font-bold flex items-center gap-1 pt-1 border-t border-slate-850">
+                        <CheckCircle2 className="w-3 h-3" /> 0 processus récurrent
+                      </div>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 space-y-2">
+                      <div className="font-bold text-white flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <Database className="w-4 h-4 text-emerald-400" />
+                          <span>Stockage & Données</span>
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 text-[10px] font-bold">
+                          Autonome
+                        </span>
+                      </div>
+                      <p className="text-slate-400 text-[11px] leading-relaxed">
+                        Les données SEO et le référentiel sont conservés en mémoire serveur sécurisée Node.js, sans abonnement de base de données externe payante.
+                      </p>
+                      <div className="text-emerald-400 text-[10px] font-bold flex items-center gap-1 pt-1 border-t border-slate-850">
+                        <CheckCircle2 className="w-3 h-3" /> 0 abonnement DB
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             )}
           </>
@@ -1148,7 +1283,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({
             <div className="px-6 py-5 border-b border-slate-800 flex items-center justify-between bg-slate-900/90 sticky top-0 z-10">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400">
-                  <Sparkles className="w-5 h-5" />
+                  <Database className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
@@ -1282,7 +1417,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="font-bold text-white text-sm flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-sky-400" />
+                    <Target className="w-4 h-4 text-sky-400" />
                     <span>Opportunités de Mots-Clés Proposées (Validation Requise)</span>
                   </div>
                   <div className="text-[11px] text-slate-400">
