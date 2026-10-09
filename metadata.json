@@ -1,0 +1,8 @@
+{
+  "name": "Remix Nova Nettoyage - Rénovation Extérieure",
+  "description": "Entreprise Nova Nettoyage spécialisée dans le nettoyage haute performance, la rénovation esthétique et l\u0027entretien des terrasses, façades et toitures à Mérignac et en Gironde.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
