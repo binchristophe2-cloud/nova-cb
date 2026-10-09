@@ -173,32 +173,32 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       </section>
 
       {/* Section : Problème et Solution professionnelle */}
-      <section className="py-12 sm:py-16 border-b border-slate-800 bg-slate-900/40">
+      <section className="py-14 sm:py-20 border-b border-stone-200/80 bg-[#F5F2EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Problème rencontré */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-slate-900 border border-rose-500/20 shadow-xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/15 text-rose-400 text-xs font-bold uppercase">
+            <div className="p-6 sm:p-8 rounded-3xl bg-rose-50/70 border border-rose-200 shadow-sm space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 border border-rose-200 text-rose-800 text-xs font-bold uppercase">
                 <span>Le Risque des Méthodes Inadaptées</span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-white">
+              <h2 className="text-xl sm:text-2xl font-black text-stone-900">
                 Pourquoi un simple jet haute pression ou de la javel est dangereux
               </h2>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
                 {silo.problemStatement}
               </p>
             </div>
 
             {/* Solution NOVA CB */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-slate-900 border border-emerald-500/30 shadow-xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold uppercase">
-                <span>L'Approche Professionnelle <strong className="text-white font-black">NOVA CB</strong></span>
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-emerald-300 shadow-sm space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase">
+                <span>L'Approche Professionnelle <strong className="text-stone-900 font-black">NOVA CB</strong></span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-white">
+              <h2 className="text-xl sm:text-2xl font-black text-stone-900">
                 La méthode contrôlée sans détériorer le support
               </h2>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
                 {silo.solutionOverview}
               </p>
             </div>
@@ -208,11 +208,11 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
           {/* Key Benefits Grid */}
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {silo.keyBenefits.map((benefit, idx) => (
-              <div key={idx} className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <div key={idx} className="p-4 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">
+                <span className="text-xs sm:text-sm text-stone-800 font-medium leading-snug">
                   {benefit}
                 </span>
               </div>
@@ -223,9 +223,9 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
           <div className="mt-8 text-center">
             <button
               onClick={() => onOpenQuote(silo.shortTitle)}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-slate-800 hover:bg-slate-750 border border-sky-500/50 hover:border-sky-400 text-white text-xs sm:text-sm font-bold shadow-md transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-emerald-400" />
+              <CheckCircle2 className="w-4 h-4 text-white" />
               <span>Faire estimer mon chantier pour {silo.shortTitle}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
@@ -359,16 +359,16 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       )}
 
       {/* Section : Supports et Matériaux Traités */}
-      <section className="py-12 sm:py-16 border-b border-slate-800">
+      <section className="py-14 sm:py-20 border-b border-stone-200/80 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-8">
-            <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
               Polyvalence & Adaptabilité
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-white">
+            <h2 className="text-2xl sm:text-3xl font-black text-stone-900">
               Surfaces et supports pris en charge
             </h2>
-            <p className="text-sm text-slate-400 mt-2">
+            <p className="text-sm sm:text-base text-stone-600 mt-2">
               Chaque revêtement obéit à des propriétés physiques uniques. Nous ajustons la buse, la pression et les solutions nettoyantes pour chaque matériau.
             </p>
           </div>
@@ -377,12 +377,12 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
             {silo.supports.map((support, idx) => (
               <div 
                 key={idx} 
-                className="p-4 rounded-2xl bg-slate-900 border border-slate-800/90 hover:border-sky-500/40 transition-all flex items-center gap-3"
+                className="p-5 rounded-2xl bg-white border border-stone-200/90 shadow-sm hover:border-emerald-400 transition-all flex items-center gap-3"
               >
-                <div className="w-8 h-8 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
                   <Layers className="w-4 h-4" />
                 </div>
-                <span className="text-xs sm:text-sm font-semibold text-slate-200">
+                <span className="text-xs sm:text-sm font-bold text-stone-900">
                   {support}
                 </span>
               </div>
@@ -392,16 +392,16 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       </section>
 
       {/* Section : Méthode d'intervention étape par étape */}
-      <section className="py-12 sm:py-16 border-b border-slate-800 bg-slate-900/30">
+      <section className="py-14 sm:py-20 border-b border-stone-200/80 bg-[#F5F2EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
               Rigueur Artisanale
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-white">
+            <h2 className="text-2xl sm:text-3xl font-black text-stone-900">
               Notre protocole d'intervention en 4 étapes
             </h2>
-            <p className="text-sm text-slate-400 mt-2">
+            <p className="text-sm sm:text-base text-stone-600 mt-2">
               De l’inspection initiale jusqu’au contrôle de finition, rien n’est laissé au hasard.
             </p>
           </div>
@@ -410,16 +410,16 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
             {silo.protocol.map((step) => (
               <div 
                 key={step.step}
-                className="p-6 rounded-3xl bg-slate-900 border border-slate-800 relative flex flex-col justify-between"
+                className="p-6 rounded-3xl bg-white border border-stone-200/90 shadow-sm relative flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-md shadow-emerald-600/30">
+                  <div className="w-10 h-10 rounded-2xl bg-emerald-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-md shadow-emerald-600/20">
                     {step.step}
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2">
+                  <h3 className="text-base font-bold text-stone-900 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -430,69 +430,69 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       </section>
 
       {/* Section : Facteurs influençant le prix & Devis transparent */}
-      <section className="py-12 sm:py-16 border-b border-slate-800">
+      <section className="py-14 sm:py-20 border-b border-stone-200/80 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-7 space-y-4">
-              <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
                 Transparence & Estimation
               </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-white">
+              <h2 className="text-2xl sm:text-3xl font-black text-stone-900">
                 Comment est calculé le prix d’un nettoyage ?
               </h2>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Chez <strong className="text-emerald-400 font-extrabold">NOVA CB</strong>, nous croyons à la transparence tarifaire. Le montant de votre devis dépend de critères objectifs et techniques :
+              <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
+                Chez <strong className="text-emerald-800 font-extrabold">NOVA CB</strong>, nous croyons à la transparence tarifaire. Le montant de votre devis dépend de critères objectifs et techniques :
               </p>
 
               <ul className="space-y-2.5 pt-2">
                 {silo.pricingFactors.map((factor, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-800 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                     <span>{factor}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="p-4 rounded-2xl bg-sky-950/40 border border-emerald-500/30 text-xs text-sky-200 mt-4 leading-relaxed">
-                <span className="font-extrabold text-white block mb-1">Repère d’estimation :</span>
+              <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-950 mt-4 leading-relaxed font-medium">
+                <span className="font-extrabold text-stone-900 block mb-1">Repère d’estimation :</span>
                 {silo.pricingGuide}
               </div>
             </div>
 
             {/* Box CTA Devis */}
-            <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-slate-900 border border-slate-700/80 shadow-2xl text-center space-y-5">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mx-auto shadow-lg shadow-emerald-600/30">
+            <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-white border border-stone-200/90 shadow-xl text-center space-y-5">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mx-auto shadow-lg shadow-emerald-600/20">
                 <BadgePercent className="w-6 h-6" />
               </div>
 
               <div>
-                <h3 className="text-xl font-extrabold text-white">
+                <h3 className="text-xl font-extrabold text-stone-900">
                   Obtenez votre estimation gratuite
                 </h3>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs sm:text-sm text-stone-600 mt-1">
                   Sans engagement • Réponse sous 48h ouvrées
                 </p>
               </div>
 
-              <div className="space-y-2 text-left text-xs text-slate-300 bg-slate-950/60 p-4 rounded-2xl border border-slate-800">
+              <div className="space-y-2.5 text-left text-xs sm:text-sm text-stone-800 bg-stone-50 p-4 rounded-2xl border border-stone-200/80">
                 <div className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <Check className="w-4 h-4 text-emerald-600" />
                   <span>Visite technique préalable gratuite</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <Check className="w-4 h-4 text-emerald-600" />
                   <span>Prix ferme et définitif sans surprise</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <Check className="w-4 h-4 text-emerald-600" />
                   <span>Artisan assuré et certifié en Gironde</span>
                 </div>
               </div>
 
               <button
                 onClick={() => onOpenQuote(silo.shortTitle)}
-                className="w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-xl shadow-emerald-600/30 transition-all cursor-pointer"
+                className="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-600/30 transition-all cursor-pointer"
               >
                 Demander mon devis en 2 minutes
               </button>
@@ -503,13 +503,13 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       </section>
 
       {/* Section FAQ SEO Spécifique */}
-      <section className="py-12 sm:py-16 border-b border-slate-800 bg-slate-900/30">
+      <section className="py-14 sm:py-20 border-b border-stone-200/80 bg-[#FAF8F5]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider mb-2">
               Questions Fréquentes
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-white">
+            <h2 className="text-2xl sm:text-3xl font-black text-stone-950">
               FAQ : Tout savoir sur {silo.shortTitle.toLowerCase()}
             </h2>
           </div>
@@ -520,22 +520,26 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
               return (
                 <div 
                   key={idx}
-                  className="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden transition-colors"
+                  className={`rounded-2xl border transition-all duration-200 overflow-hidden shadow-sm ${
+                    isOpen
+                      ? 'bg-white border-emerald-600 shadow-md ring-1 ring-emerald-600/30'
+                      : 'bg-white border-stone-300 hover:border-emerald-400'
+                  }`}
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full py-4 px-5 text-left flex items-center justify-between gap-4 text-sm sm:text-base font-bold text-white hover:text-emerald-300 transition-colors cursor-pointer"
+                    className="w-full py-4.5 px-6 text-left flex items-center justify-between gap-4 text-base sm:text-lg font-bold text-stone-950 hover:text-emerald-700 transition-colors cursor-pointer"
                     aria-expanded={isOpen}
                   >
                     <span>{faq.question}</span>
                     {isOpen ? (
-                      <ChevronUp className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <ChevronUp className="w-5 h-5 text-emerald-700 shrink-0" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
+                      <ChevronDown className="w-5 h-5 text-stone-600 shrink-0" />
                     )}
                   </button>
                   {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+                    <div className="px-6 pb-6 text-sm sm:text-base text-stone-900 leading-relaxed border-t border-stone-200 pt-4 bg-stone-50/80 font-normal">
                       {faq.answer}
                     </div>
                   )}
@@ -547,14 +551,14 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
       </section>
 
       {/* Maillage Interne : Silos Complémentaires & Villes */}
-      <section className="py-12 sm:py-16 border-b border-slate-800">
+      <section className="py-14 sm:py-20 border-b border-stone-200/80 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             {/* Silos Liés */}
-            <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800">
-              <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
-                <Wrench className="w-4 h-4 text-emerald-400" />
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-stone-200/90 shadow-sm">
+              <h3 className="text-base font-bold text-stone-900 mb-4 flex items-center gap-2">
+                <Wrench className="w-4 h-4 text-emerald-600" />
                 <span>Prestations complémentaires recommandées</span>
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -562,10 +566,10 @@ export const ServiceSiloPage: React.FC<ServiceSiloPageProps> = ({
                   <button
                     key={rel.slug}
                     onClick={() => onNavigateToSilo(rel.slug)}
-                    className="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-750 text-left text-xs font-semibold text-slate-200 hover:text-white border border-slate-700/60 hover:border-sky-500/40 transition-all flex items-center justify-between group cursor-pointer"
+                    className="p-3.5 rounded-xl bg-stone-50 hover:bg-emerald-50 text-left text-xs font-semibold text-stone-800 hover:text-emerald-800 border border-stone-200 hover:border-emerald-300 transition-all flex items-center justify-between group cursor-pointer"
                   >
                     <span>{rel.title}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-400 transform group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-emerald-600 transform group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 ))}
               </div>

@@ -45,8 +45,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenQuote }) => {
                 id={`faq-item-${idx}`}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden shadow-sm ${
                   isOpen
-                    ? 'bg-white border-emerald-500 shadow-md ring-1 ring-emerald-500/20'
-                    : 'bg-white border-stone-200 hover:border-emerald-300 hover:bg-stone-50/50'
+                    ? 'bg-white border-emerald-600 shadow-md ring-1 ring-emerald-600/30'
+                    : 'bg-white border-stone-300 hover:border-emerald-400 hover:bg-stone-50/50'
                 }`}
               >
                 <button
@@ -57,7 +57,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenQuote }) => {
                 >
                   <span
                     className={`text-base sm:text-lg font-bold transition-colors ${
-                      isOpen ? 'text-emerald-800' : 'text-stone-900'
+                      isOpen ? 'text-emerald-800' : 'text-stone-950'
                     }`}
                   >
                     {item.question}
@@ -66,7 +66,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenQuote }) => {
                     className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-colors ${
                       isOpen
                         ? 'bg-emerald-600 text-white shadow-sm'
-                        : 'bg-stone-100 text-stone-700 border border-stone-200'
+                        : 'bg-stone-100 text-stone-800 border border-stone-300'
                     }`}
                   >
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -76,7 +76,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenQuote }) => {
                 {isOpen && (
                   <div
                     id={`faq-answer-${idx}`}
-                    className="px-5 pb-6 sm:px-6 sm:pb-6 text-stone-600 text-sm sm:text-base leading-relaxed border-t border-stone-100 pt-4 bg-emerald-50/30"
+                    className="px-5 pb-6 sm:px-6 sm:pb-6 text-stone-900 text-sm sm:text-base leading-relaxed border-t border-stone-200 pt-4 bg-stone-50/80 font-normal"
                   >
                     <p>{item.answer}</p>
                   </div>

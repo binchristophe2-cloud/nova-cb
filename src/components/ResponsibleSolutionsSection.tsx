@@ -95,29 +95,29 @@ export const ResponsibleSolutionsSection: React.FC<ResponsibleSolutionsSectionPr
                     </h4>
                   </div>
 
-                  <p className="text-xs text-emerald-100/80 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed font-normal">
                     {prod.description}
                   </p>
 
-                  <div className="pt-2 border-t border-emerald-900/60 space-y-1.5 text-xs">
-                    <div className="text-emerald-200/70">
-                      <strong className="text-white">Supports compatibles :</strong> {prod.supports.slice(0, 3).join(', ')}...
+                  <div className="pt-2 border-t border-emerald-900/60 space-y-2 text-xs">
+                    <div className="text-emerald-100">
+                      <strong className="text-white font-bold">Supports compatibles :</strong> {prod.supports.slice(0, 3).join(', ')}...
                     </div>
-                    <div className="text-emerald-200/70">
-                      <strong className="text-white">Application :</strong> {prod.applicationMethod}
+                    <div className="text-emerald-100">
+                      <strong className="text-white font-bold">Application :</strong> {prod.applicationMethod}
                     </div>
-                    <div className="text-emerald-200/70">
-                      <strong className="text-white">Action :</strong> {prod.actionTime}
+                    <div className="text-emerald-100">
+                      <strong className="text-white font-bold">Action :</strong> {prod.actionTime}
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-emerald-900/60 flex items-center justify-between text-[11px]">
-                  <span className="text-emerald-300/60 italic">
+                <div className="mt-4 pt-3 border-t border-emerald-900/60 flex items-center justify-between text-xs">
+                  <span className="text-emerald-200/90 italic font-medium">
                     Utilisé selon compatibilité chantier
                   </span>
-                  <span className="inline-flex items-center gap-1 text-emerald-400 font-semibold">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span className="inline-flex items-center gap-1 text-emerald-300 font-bold">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     <span>Sélection technique qualifiée</span>
                   </span>
                 </div>
@@ -127,11 +127,11 @@ export const ResponsibleSolutionsSection: React.FC<ResponsibleSolutionsSectionPr
         )}
 
         {/* Responsible Method Banner */}
-        <div className="p-4 rounded-2xl bg-[#091F17]/70 border border-emerald-900/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-emerald-200/70">
-          <div className="flex items-center gap-2">
+        <div className="p-4 rounded-2xl bg-[#091F17]/90 border border-emerald-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm text-emerald-100">
+          <div className="flex items-center gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>
-              <strong>Note de transparence :</strong> Les solutions de nettoyage sont sélectionnées en fonction de la nature et de la sensibilité du support. La mention ECOCERT s’applique exclusivement aux références formellement certifiées.
+            <span className="leading-relaxed">
+              <strong className="text-white font-bold">Note de transparence :</strong> Les solutions de nettoyage sont sélectionnées en fonction de la nature et de la sensibilité du support. La mention ECOCERT s’applique exclusivement aux références formellement certifiées.
             </span>
           </div>
         </div>

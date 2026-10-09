@@ -28,7 +28,7 @@ export const LocalZonesSection: React.FC<LocalZonesSectionProps> = ({
             Zones d'intervention en Gironde
           </h2>
 
-          <p className="mt-4 text-stone-600 text-base sm:text-lg leading-relaxed">
+          <p className="mt-4 text-stone-700 text-base sm:text-lg leading-relaxed font-normal">
             Installés au 33 avenue Léon Blum à Mérignac, nous intervenons sans surcoût de déplacement dans toute la métropole bordelaise et dans un rayon de 40 km.
           </p>
         </div>
@@ -38,35 +38,35 @@ export const LocalZonesSection: React.FC<LocalZonesSectionProps> = ({
           {cities.map((city) => (
             <div
               key={city.slug}
-              className="rounded-3xl bg-white border border-stone-200 hover:border-emerald-500/50 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group"
+              className="rounded-3xl bg-white border border-stone-300 hover:border-emerald-500 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-black text-xs border border-emerald-200">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-black text-xs border border-emerald-300">
                       33
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-stone-900 group-hover:text-emerald-700 transition-colors">
+                      <h3 className="text-lg font-black text-stone-950 group-hover:text-emerald-700 transition-colors">
                         {city.cityName}
                       </h3>
-                      <div className="text-[11px] text-stone-500 font-mono">
+                      <div className="text-xs text-stone-600 font-mono font-medium">
                         Code Postal : {city.postalCode}
                       </div>
                     </div>
                   </div>
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100/70 text-emerald-800 border border-emerald-200">
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">
                     Secteur direct
                   </span>
                 </div>
 
-                <p className="text-xs text-stone-600 leading-relaxed mb-4 line-clamp-3">
+                <p className="text-xs sm:text-sm text-stone-700 leading-relaxed mb-4 line-clamp-3 font-normal">
                   {city.intro}
                 </p>
 
-                <div className="text-[11px] text-stone-600 font-medium space-y-1 bg-stone-50 p-3 rounded-xl border border-stone-200 mb-4">
-                  <div className="text-emerald-700 font-bold text-[10px] uppercase">Quartiers & Spécificités :</div>
-                  <div className="truncate text-stone-700">
+                <div className="text-xs text-stone-700 font-medium space-y-1.5 bg-stone-50 p-3 rounded-xl border border-stone-200 mb-4">
+                  <div className="text-emerald-900 font-bold text-[11px] uppercase tracking-wide">Quartiers & Spécificités :</div>
+                  <div className="truncate text-stone-800 font-medium">
                     {city.neighborhoods.slice(0, 4).join(', ')}...
                   </div>
                 </div>
