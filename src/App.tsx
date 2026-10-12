@@ -127,6 +127,12 @@ export default function App() {
 
   useEffect(() => {
     resolveRoute();
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'page_view', {
+        page_path: window.location.pathname + window.location.search + window.location.hash,
+        page_title: document.title,
+      });
+    }
     window.addEventListener('popstate', resolveRoute);
     window.addEventListener('hashchange', resolveRoute);
     return () => {
