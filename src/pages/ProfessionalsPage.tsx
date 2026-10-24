@@ -37,7 +37,6 @@ interface ProfessionalService {
   technicalCondition: string;
   exclusions?: string;
   waterDrainCondition?: string;
-  image?: string;
 }
 
 export const ProfessionalsPage: React.FC<ProfessionalsPageProps> = ({
@@ -84,8 +83,7 @@ export const ProfessionalsPage: React.FC<ProfessionalsPageProps> = ({
         "Nettoyage d'accès et de cheminements.",
         "Traitement des salissures et dépôts compatibles avec les supports."
       ],
-      technicalCondition: "La méthode est définie selon le matériau, l'état de la surface et les contraintes d'évacuation des eaux.",
-      image: "/src/assets/images/patio_rotary_cleaner_stone.jpg"
+      technicalCondition: "La méthode est définie selon le matériau, l'état de la surface et les contraintes d'évacuation des eaux."
     },
     {
       id: 4,
@@ -127,8 +125,7 @@ export const ProfessionalsPage: React.FC<ProfessionalsPageProps> = ({
         "Entretien des surfaces extérieures maçonnées.",
         "Étude des besoins de traitement complémentaire, lorsque cela est pertinent."
       ],
-      technicalCondition: "La technique utilisée dépend du support, de son état et du type de salissures. Un diagnostic préalable permet de déterminer la méthode adaptée.",
-      image: "/src/assets/images/artisan_facade_clean_1789483624059.jpg"
+      technicalCondition: "La technique utilisée dépend du support, de son état et du type de salissures. Un diagnostic préalable permet de déterminer la méthode adaptée."
     },
     {
       id: 7,
@@ -251,37 +248,17 @@ export const ProfessionalsPage: React.FC<ProfessionalsPageProps> = ({
                 id={`pro-service-${service.id}`}
                 className="bg-white rounded-3xl border border-stone-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden"
               >
-                {/* Image optionnelle si disponible et pertinente */}
-                {service.image && (
-                  <div className="h-48 sm:h-56 w-full relative overflow-hidden bg-stone-900">
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent" />
-                    <div className="absolute top-4 left-4">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-700 text-white text-[11px] font-black uppercase tracking-wider shadow">
+                <div className="p-6 sm:p-8 flex-1 flex flex-col space-y-6">
+                  {/* Titre et Badge de la prestation */}
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">
                         {service.badge}
                       </span>
+                      <span className="text-xs font-bold text-stone-400">
+                        Prestation #{service.id}
+                      </span>
                     </div>
-                  </div>
-                )}
-
-                <div className="p-6 sm:p-8 flex-1 flex flex-col space-y-6">
-                  {/* Titre et Badge si pas d'image */}
-                  <div>
-                    {!service.image && (
-                      <div className="flex items-center justify-between gap-3 mb-4">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">
-                          {service.badge}
-                        </span>
-                        <span className="text-xs font-bold text-stone-400">
-                          Prestation #{service.id}
-                        </span>
-                      </div>
-                    )}
 
                     <div className="flex items-start gap-3.5">
                       <div className="w-10 h-10 rounded-2xl bg-emerald-50 border border-emerald-200/80 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
