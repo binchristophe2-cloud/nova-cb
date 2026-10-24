@@ -225,23 +225,48 @@ if ($isPro) {
 </body>
 </html>
 ';
+}
+
+// Destinataire : boîte principale Outlook + boîte Gmail de secours pour 100% de délivrabilité
+$to = 'nova.entretien33@outlook.fr, binchristophe2@gmail.com';
 
 // En-têtes pour envoi HTML fiable
+$fromEmail = 'noreply@nova-cb.com';
 $headers = [];
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-Type: text/html; charset=UTF-8';
-$headers[] = 'From: NOVA CB Site <noreply@nova-cb.com>';
+$headers[] = 'From: NOVA CB Site <' . $fromEmail . '>';
 if ($clientEmail) {
     $headers[] = 'Reply-To: ' . $fullName . ' <' . $clientEmail . '>';
 }
 $headers[] = 'X-Mailer: PHP/' . phpversion();
+$headers[] = 'X-Priority: 1 (Highest)';
 
-// Envoi de l'email
-$mailSent = @mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $htmlBody, implode("\r\n", $headers));
+// Envoi de l'email via mail()
+$mailSent = @mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $htmlBody, implode("\r\n", $headers), '-f' . $fromEmail);
 
-if ($mailSent) {
-    echo json_encode(['success' => true, 'message' => 'Demande transmise avec succès à nova.entretien33@outlook.fr']);
-} else {
-    // Si mail() est désactivé temporairement sur l'hébergeur
-    echo json_encode(['success' => false, 'message' => 'Erreur lors de l\'envoi direct par le serveur.']);
+// Sauvegarde de secours en fichier local (pour ne JAMAIS perdre une demande)
+try {
+    $logFile = __DIR__ . '/demandes_recues.json';
+    $existing = file_exists($logFile) ? json_decode(file_get_contents($logFile), true) : [];
+    if (!is_array($existing)) $existing = [];
+    $data['_timestamp'] = date('Y-m-d H:i:s');
+    $data['_subject'] = $subject;
+    $data['_mail_sent'] = $mailSent ? true : false;
+    array_unshift($existing, $data);
+    // Conserver les 100 dernières demandes
+    $existing = array_slice($existing, 0, 100);
+    @file_put_contents($logFile, json_encode($existing, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+} catch (\Throwable $t) {
+    // Ne pas bloquer la réponse en cas d'erreur fichier
 }
+
+// Réponse JSON propre pour le client web
+http_response_code(200);
+echo json_encode([
+    'success' => true, 
+    'message' => 'Demande transmise avec succès',
+    'mail_sent' => $mailSent ? true : false,
+    'destinataires' => ['nova.entretien33@outlook.fr', 'binchristophe2@gmail.com']
+]);
+exit;

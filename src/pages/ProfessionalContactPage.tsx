@@ -168,9 +168,14 @@ export const ProfessionalContactPage: React.FC<ProfessionalContactPageProps> = (
     const formBoldEndpoint = (import.meta as any).env?.VITE_FORMBOLD_PRO_ENDPOINT || 'https://formbold.com/s/9kmb2';
 
     try {
-      // Transmission simultanée : FormBold + Hostinger contact.php + route Node /api/contact
+      // Transmission simultanée multi-canaux pour 100% de délivrabilité :
+      // 1. Script Hostinger natif contact.php (sauvegarde JSON + mail())
+      // 2. FormSubmit AJAX vers nova.entretien33@outlook.fr
+      // 3. FormSubmit AJAX vers binchristophe2@gmail.com
+      // 4. FormBold (endpoint configuré)
+      // 5. API Node /api/contact
       await Promise.allSettled([
-        fetch(formBoldEndpoint, {
+        fetch('/contact.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -178,7 +183,23 @@ export const ProfessionalContactPage: React.FC<ProfessionalContactPageProps> = (
           },
           body: JSON.stringify(payload),
         }),
-        fetch('/contact.php', {
+        fetch('https://formsubmit.co/ajax/nova.entretien33@outlook.fr', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        }),
+        fetch('https://formsubmit.co/ajax/binchristophe2@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        }),
+        fetch(formBoldEndpoint, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

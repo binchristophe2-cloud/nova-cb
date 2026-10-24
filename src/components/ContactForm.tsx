@@ -256,6 +256,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialService, classN
           },
           body: JSON.stringify(payload),
         }),
+        fetch('https://formsubmit.co/ajax/binchristophe2@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        }),
         fetch('/api/contact', {
           method: 'POST',
           headers: {
