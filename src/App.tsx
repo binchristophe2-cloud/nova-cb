@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage';
 import { ServiceSiloPage } from './pages/ServiceSiloPage';
 import { LocalCityPage } from './pages/LocalCityPage';
 import { ProductsSolutionsPage } from './pages/ProductsSolutionsPage';
+import { ProfessionalsPage } from './pages/ProfessionalsPage';
 import { NotificationToast } from './components/NotificationToast';
 import { PageType, AppNotification, AdminUser } from './types';
 import { SERVICE_SILOS, LOCAL_CITY_SILOS } from './data/silosData';
@@ -85,6 +86,12 @@ export default function App() {
         setCurrentCitySlug(null);
         return;
       }
+      if (routeCandidate === 'professionnels' || routeCandidate === 'espace-pro' || routeCandidate === 'pro') {
+        setCurrentPage('professionnels');
+        setCurrentSiloSlug(null);
+        setCurrentCitySlug(null);
+        return;
+      }
       if (SERVICE_SILOS[routeCandidate]) {
         setCurrentSiloSlug(routeCandidate);
         setCurrentCitySlug(null);
@@ -146,6 +153,18 @@ export default function App() {
     setCurrentSiloSlug(null);
     setCurrentCitySlug(null);
     setIsAdminRoute(false);
+
+    if (page === 'professionnels') {
+      window.history.pushState(null, '', '/professionnels');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (page === 'products') {
+      window.history.pushState(null, '', '/nos-produits');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
 
     if (window.location.pathname !== '/' && window.location.pathname !== '') {
       window.history.pushState(null, '', `/#${page}`);
@@ -344,6 +363,11 @@ export default function App() {
       <main className="flex-1">
         {currentPage === 'products' ? (
           <ProductsSolutionsPage
+            onOpenQuote={handleOpenQuote}
+            onNavigateHome={handleNavigateHome}
+          />
+        ) : currentPage === 'professionnels' ? (
+          <ProfessionalsPage
             onOpenQuote={handleOpenQuote}
             onNavigateHome={handleNavigateHome}
           />

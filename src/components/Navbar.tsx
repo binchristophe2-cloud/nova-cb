@@ -64,6 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'Accueil', page: 'home' },
     { label: 'À propos', page: 'about' },
     { label: 'Services', page: 'services' },
+    { label: 'Professionnels', page: 'professionnels' },
     { label: 'Contact', page: 'contact' },
   ];
 
@@ -78,8 +79,11 @@ export const Navbar: React.FC<NavbarProps> = ({
     onNavigate(page);
     setMobileMenuOpen(false);
     setSectorDropdownOpen(false);
+    if (page === 'professionnels') {
+      return;
+    }
     const targetId = sectionMap[page];
-    const el = document.getElementById(targetId);
+    const el = targetId ? document.getElementById(targetId) : null;
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     } else {

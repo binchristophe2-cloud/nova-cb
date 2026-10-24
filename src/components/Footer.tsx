@@ -63,6 +63,14 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-1.5 text-xs text-emerald-100/70">
               <li>
                 <button
+                  onClick={() => onNavigate('professionnels')}
+                  className="hover:text-emerald-300 font-bold transition-colors text-left cursor-pointer flex items-center gap-1.5 text-emerald-400"
+                >
+                  <span>• Espace Professionnels</span>
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onNavigate('products')}
                   className="hover:text-emerald-300 font-bold transition-colors text-left cursor-pointer flex items-center gap-1.5 text-emerald-400"
                 >
