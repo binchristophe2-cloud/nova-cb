@@ -6,6 +6,7 @@ import { ServiceSiloPage } from './pages/ServiceSiloPage';
 import { LocalCityPage } from './pages/LocalCityPage';
 import { ProductsSolutionsPage } from './pages/ProductsSolutionsPage';
 import { ProfessionalsPage } from './pages/ProfessionalsPage';
+import { ProfessionalContactPage } from './pages/ProfessionalContactPage';
 import { NotificationToast } from './components/NotificationToast';
 import { PageType, AppNotification, AdminUser } from './types';
 import { SERVICE_SILOS, LOCAL_CITY_SILOS } from './data/silosData';
@@ -20,6 +21,7 @@ export default function App() {
   const [currentSiloSlug, setCurrentSiloSlug] = useState<string | null>(null);
   const [currentCitySlug, setCurrentCitySlug] = useState<string | null>(null);
   const [selectedService, setSelectedService] = useState<string>('terrasses-bois');
+  const [selectedProService, setSelectedProService] = useState<string>('');
   const [notification, setNotification] = useState<AppNotification | null>(null);
 
   // Admin state
@@ -86,7 +88,13 @@ export default function App() {
         setCurrentCitySlug(null);
         return;
       }
-      if (routeCandidate === 'professionnels' || routeCandidate === 'espace-pro' || routeCandidate === 'pro') {
+      if (routeCandidate === 'contact-professionnels' || routeCandidate === 'contact-pro' || routeCandidate === 'etude-projet') {
+        setCurrentPage('contact-professionnels');
+        setCurrentSiloSlug(null);
+        setCurrentCitySlug(null);
+        return;
+      }
+      if (routeCandidate === 'professionnels' || routeCandidate === 'espace-pro' || routeCandidate === 'pro' || routeCandidate === 'professionnels-partenaires') {
         setCurrentPage('professionnels');
         setCurrentSiloSlug(null);
         setCurrentCitySlug(null);
@@ -160,6 +168,12 @@ export default function App() {
       return;
     }
 
+    if (page === 'contact-professionnels') {
+      window.history.pushState(null, '', '/contact-professionnels');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     if (page === 'products') {
       window.history.pushState(null, '', '/nos-produits');
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -194,6 +208,27 @@ export default function App() {
     setCurrentCitySlug(null);
     setIsAdminRoute(false);
     window.history.pushState(null, '', '/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateToProContact = (serviceTitle?: string) => {
+    if (serviceTitle) {
+      setSelectedProService(serviceTitle);
+    }
+    setCurrentPage('contact-professionnels');
+    setCurrentSiloSlug(null);
+    setCurrentCitySlug(null);
+    setIsAdminRoute(false);
+    window.history.pushState(null, '', '/contact-professionnels');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateToProfessionals = () => {
+    setCurrentPage('professionnels');
+    setCurrentSiloSlug(null);
+    setCurrentCitySlug(null);
+    setIsAdminRoute(false);
+    window.history.pushState(null, '', '/professionnels');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -370,6 +405,13 @@ export default function App() {
           <ProfessionalsPage
             onOpenQuote={handleOpenQuote}
             onNavigateHome={handleNavigateHome}
+            onNavigateToProContact={handleNavigateToProContact}
+          />
+        ) : currentPage === 'contact-professionnels' ? (
+          <ProfessionalContactPage
+            initialService={selectedProService}
+            onNavigateHome={handleNavigateHome}
+            onNavigateToProfessionals={handleNavigateToProfessionals}
           />
         ) : activeSilo ? (
           <ServiceSiloPage

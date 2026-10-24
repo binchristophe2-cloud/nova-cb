@@ -5,6 +5,7 @@ export type PageType =
   | 'contact' 
   | 'products'
   | 'professionnels'
+  | 'contact-professionnels'
   | 'silo' 
   | 'local' 
   | 'admin-login'

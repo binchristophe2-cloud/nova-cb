@@ -25,6 +25,7 @@ import { SeoHead } from '../components/SeoHead';
 interface ProfessionalsPageProps {
   onOpenQuote: (serviceName?: string) => void;
   onNavigateHome: () => void;
+  onNavigateToProContact: (serviceTitle?: string) => void;
 }
 
 interface ProfessionalService {
@@ -42,6 +43,7 @@ interface ProfessionalService {
 export const ProfessionalsPage: React.FC<ProfessionalsPageProps> = ({
   onOpenQuote,
   onNavigateHome,
+  onNavigateToProContact,
 }) => {
   const professionalServices: ProfessionalService[] = [
     {
@@ -326,7 +328,7 @@ export const ProfessionalsPage: React.FC<ProfessionalsPageProps> = ({
                   {/* Bouton d'action pour la prestation */}
                   <div className="pt-2">
                     <button
-                      onClick={() => onOpenQuote(service.title)}
+                      onClick={() => onNavigateToProContact(service.title)}
                       className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-[#091F17] hover:bg-emerald-700 text-white font-bold text-xs transition-colors cursor-pointer"
                     >
                       <span>Étudier ce besoin pour mon entreprise</span>
@@ -373,11 +375,11 @@ export const ProfessionalsPage: React.FC<ProfessionalsPageProps> = ({
           {/* Boutons d'action principaux */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 relative z-10">
             <button
-              id="btn-presenter-besoin-pro"
-              onClick={() => onOpenQuote('Besoins professionnels')}
+              id="btn-etudier-mon-projet"
+              onClick={() => onNavigateToProContact('Besoins professionnels')}
               className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm transition-all shadow-xl shadow-emerald-600/30 cursor-pointer border border-emerald-400/40 transform hover:-translate-y-0.5"
             >
-              <span>Présenter mon besoin professionnel</span>
+              <span>Étudier mon projet</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 

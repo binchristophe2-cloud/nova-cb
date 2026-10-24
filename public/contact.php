@@ -34,7 +34,7 @@ function sanitize_field($value) {
 $fullName   = sanitize_field($data['nom_complet'] ?? $data['fullName'] ?? $data['name'] ?? 'Non spécifié');
 $phone      = sanitize_field($data['telephone'] ?? $data['phone'] ?? 'Non spécifié');
 $clientEmail = filter_var(trim((string)($data['email'] ?? '')), FILTER_VALIDATE_EMAIL);
-$address    = sanitize_field($data['adresse_du_bien'] ?? $data['address'] ?? 'Non renseignée');
+$address    = sanitize_field($data['adresse_du_bien'] ?? $data['address'] ?? $data['adresse_chantier'] ?? 'Non renseignée');
 $postalCode = sanitize_field($data['code_postal'] ?? $data['postalCode'] ?? '');
 $city       = sanitize_field($data['ville'] ?? $data['city'] ?? 'Mérignac');
 $support    = sanitize_field($data['support_a_diagnostiquer'] ?? $data['support'] ?? 'À déterminer sur place');
@@ -43,14 +43,114 @@ $consent    = sanitize_field($data['accord_recontact'] ?? 'Oui');
 $photosInfo = sanitize_field($data['photos_fournies'] ?? 'Aucune photo');
 $dateDemande = date('d/m/Y à H:i');
 
+// Champs spécifiques professionnels
+$company          = sanitize_field($data['entreprise'] ?? $data['company'] ?? '');
+$jobTitle         = sanitize_field($data['fonction'] ?? $data['job_title'] ?? '');
+$siteLocation     = sanitize_field($data['localisation_site'] ?? $data['ville_code_postal'] ?? '');
+$servicesSelected = sanitize_field($data['prestations_selectionnees'] ?? $data['services'] ?? '');
+$surfaceQuantity  = sanitize_field($data['surface_ou_quantite'] ?? '');
+$frequency        = sanitize_field($data['frequence_souhaitee'] ?? '');
+$targetPeriod     = sanitize_field($data['periode_souhaitee'] ?? '');
+$problemDesc      = sanitize_field($data['description_besoin'] ?? '');
+$constraints      = sanitize_field($data['contraintes_particulieres'] ?? '');
+$additionalNotes  = sanitize_field($data['informations_utiles'] ?? '');
+$isPro            = !empty($company) || ($data['form_type'] ?? '') === 'professionnel';
+
 // Destinataire principal
 $to = 'nova.entretien33@outlook.fr';
 
-// Sujet de l'e-mail
-$subject = "Demande de diagnostic gratuit NOVA CB - " . ($fullName ?: 'Nouveau Client');
+if ($isPro) {
+    // Sujet de l'e-mail professionnel
+    $subject = "[PRO NOVA CB] Étude de projet - " . ($company ?: 'Entreprise') . " (" . ($fullName ?: 'Contact') . ")";
 
-// Corps de l'e-mail en HTML
-$htmlBody = '
+    $htmlBody = '
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #1e293b; }
+  .card { max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; }
+  .header { background: linear-gradient(135deg, #071912 0%, #064E3B 100%); color: #ffffff; padding: 28px 24px; text-align: center; }
+  .header h1 { margin: 0; font-size: 22px; font-weight: 800; }
+  .header p { margin: 8px 0 0 0; color: #6ee7b7; font-size: 14px; }
+  .content { padding: 24px; }
+  .section-title { font-size: 14px; font-weight: 800; color: #047857; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 20px; margin-bottom: 10px; border-bottom: 2px solid #ecfdf5; padding-bottom: 4px; }
+  .info-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+  .info-table td { padding: 9px 12px; font-size: 14px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+  .info-table td.label { font-weight: 600; color: #64748b; width: 38%; }
+  .info-table td.value { color: #0f172a; font-weight: 500; }
+  .badge { display: inline-block; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; background: #dcfce7; color: #15803d; }
+  .footer { background: #f8fafc; padding: 16px 24px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #f1f5f9; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <h1>NOVA CB • Demande d\'Étude de Projet Professionnel</h1>
+    <p>Reçu via nova-cb.com/contact-professionnels le ' . $dateDemande . '</p>
+  </div>
+  <div class="content">
+    <div class="section-title">Coordonnées de l\'Entreprise</div>
+    <table class="info-table">
+      <tr>
+        <td class="label">Entreprise :</td>
+        <td class="value"><strong style="color:#047857; font-size:15px;">' . $company . '</strong></td>
+      </tr>
+      <tr>
+        <td class="label">Contact (Nom/Prénom) :</td>
+        <td class="value"><strong>' . $fullName . '</strong></td>
+      </tr>
+      ' . ($jobTitle ? '<tr><td class="label">Fonction :</td><td class="value">' . $jobTitle . '</td></tr>' : '') . '
+      <tr>
+        <td class="label">E-mail professionnel :</td>
+        <td class="value">' . ($clientEmail ? '<a href="mailto:' . $clientEmail . '" style="color:#047857; font-weight:bold; text-decoration:none;">' . $clientEmail . '</a>' : 'Non renseigné') . '</td>
+      </tr>
+      <tr>
+        <td class="label">Téléphone :</td>
+        <td class="value"><a href="tel:' . $phone . '" style="color:#047857; font-weight:bold; text-decoration:none;">' . $phone . '</a></td>
+      </tr>
+      <tr>
+        <td class="label">Localisation du site / CP :</td>
+        <td class="value">' . $siteLocation . '</td>
+      </tr>
+      ' . ($address && $address !== 'Non renseignée' ? '<tr><td class="label">Adresse du chantier :</td><td class="value">' . $address . '</td></tr>' : '') . '
+    </table>
+
+    <div class="section-title">Prestation(s) & Caractéristiques du Chantier</div>
+    <table class="info-table">
+      <tr>
+        <td class="label">Prestation(s) sélectionnée(s) :</td>
+        <td class="value"><span class="badge">' . ($servicesSelected ?: 'À définir') . '</span></td>
+      </tr>
+      <tr>
+        <td class="label">Surface / Équipements :</td>
+        <td class="value"><strong>' . ($support ?: 'Non spécifié') . '</strong></td>
+      </tr>
+      ' . ($surfaceQuantity ? '<tr><td class="label">Surface / Quantité estimée :</td><td class="value">' . $surfaceQuantity . '</td></tr>' : '') . '
+      ' . ($frequency ? '<tr><td class="label">Fréquence souhaitée :</td><td class="value">' . $frequency . '</td></tr>' : '') . '
+      ' . ($targetPeriod ? '<tr><td class="label">Période souhaitée :</td><td class="value">' . $targetPeriod . '</td></tr>' : '') . '
+      <tr>
+        <td class="label">Description du besoin :</td>
+        <td class="value" style="background:#f8fafc; padding:10px; border-radius:8px; white-space:pre-wrap;">' . ($problemDesc ?: $problems) . '</td>
+      </tr>
+      ' . ($constraints ? '<tr><td class="label">Contraintes particulières :</td><td class="value" style="color:#b45309;">' . $constraints . '</td></tr>' : '') . '
+      ' . ($additionalNotes ? '<tr><td class="label">Informations utiles :</td><td class="value">' . $additionalNotes . '</td></tr>' : '') . '
+    </table>
+  </div>
+  <div class="footer">
+    NOVA CB • Solutions de nettoyage extérieur et équipements pour professionnels en Gironde (33)
+  </div>
+</div>
+</body>
+</html>
+';
+} else {
+    // Sujet de l'e-mail particulier
+    $subject = "Demande de diagnostic gratuit NOVA CB - " . ($fullName ?: 'Nouveau Client');
+
+    // Corps de l'e-mail en HTML
+    $htmlBody = '
 <!DOCTYPE html>
 <html>
 <head>

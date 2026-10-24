@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     onNavigate(page);
     setMobileMenuOpen(false);
     setSectorDropdownOpen(false);
-    if (page === 'professionnels') {
+    if (page === 'professionnels' || page === 'contact-professionnels') {
       return;
     }
     const targetId = sectionMap[page];

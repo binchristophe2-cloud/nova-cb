@@ -41,10 +41,10 @@ async function startServer() {
   // Contact form submission endpoint
   app.post('/api/contact', (req, res) => {
     try {
-      const { nom_complet, fullName, telephone, phone, email, support_a_diagnostiquer, problemes_constates } = req.body || {};
+      const { nom_complet, fullName, telephone, phone, email, support_a_diagnostiquer, problemes_constates, entreprise, form_type } = req.body || {};
       const clientName = nom_complet || fullName || 'Client';
       const clientPhone = telephone || phone || 'Non renseigné';
-      console.log(`[NOVA CB Contact] Nouvelle demande reçue de ${clientName} (${clientPhone}) - Support: ${support_a_diagnostiquer}`);
+      console.log(`[NOVA CB Contact] Demande (${form_type || 'standard'}) de ${clientName}${entreprise ? ` (${entreprise})` : ''} - Tél: ${clientPhone}`);
       
       res.json({ 
         success: true, 
